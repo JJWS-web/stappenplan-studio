@@ -71,9 +71,11 @@ const Navbar = () => {
               {item.label}
             </Button>
           ))}
-          <Button variant="hero" size="sm" className="ml-4">
-            Start Nu
-          </Button>
+          <Link to="/start-nu">
+            <Button variant="hero" size="sm" className="ml-4">
+              Start Nu
+            </Button>
+          </Link>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -105,9 +107,11 @@ const Navbar = () => {
               {item.label}
             </Button>
           ))}
-          <Button variant="hero" className="mt-2">
-            Start Nu
-          </Button>
+          <Link to="/start-nu">
+            <Button variant="hero" className="mt-2">
+              Start Nu
+            </Button>
+          </Link>
         </nav>
       </div>
     </header>
