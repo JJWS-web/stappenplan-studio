@@ -1,7 +1,7 @@
 import { CheckCircle2, User, Briefcase, Calendar, Award, Play } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
+import video from "../assets/Pitch-Time_IT (1).mp4";
 const timeline = [
   {
     year: "Start",
@@ -90,21 +90,16 @@ const Organisatie = () => {
 
             {/* Video Container */}
             <div className="relative aspect-video bg-card rounded-2xl shadow-card overflow-hidden border border-border">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/VIDEO_ID_HERE"
-                title="Mirada BV Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <video
+    src={video}
+    controls
+    className="absolute inset-0 w-full h-full object-cover"
+  >
+    Uw browser ondersteunt deze video niet.
+  </video>
               
               {/* Placeholder overlay - remove when video is added */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-muted/80 backdrop-blur-sm">
-                <div className="w-20 h-20 rounded-full gradient-primary flex items-center justify-center mb-4 cursor-pointer hover:scale-110 transition-transform duration-300">
-                  <Play className="h-10 w-10 text-primary-foreground ml-1" />
-                </div>
-                <p className="text-muted-foreground text-sm">Video binnenkort beschikbaar</p>
-              </div>
+              
             </div>
           </div>
         </div>

@@ -92,21 +92,33 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "md:hidden absolute top-full left-0 right-0 bg-card/98 backdrop-blur-md shadow-card transition-all duration-300 overflow-hidden",
+          "md:hidden absolute top-full left-0 right-0 bg-white shadow-card transition-all duration-300 overflow-hidden",
+
           isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
-          {navItems.map((item) => (
-            <Button
-              key={item.label}
-              variant="ghost"
-              className="justify-start"
-              onClick={() => handleNavClick(item)}
-            >
-              {item.label}
-            </Button>
-          ))}
+        {navItems.map((item) => {
+  const isActive =
+    item.isPage && location.pathname === item.href ||
+    (!item.isPage && location.hash === item.href);
+
+  return (
+    <Button
+      key={item.label}
+      variant="ghost"
+      className={cn(
+        "justify-start transition-colors",
+        isActive ? "text-primary font-semibold" : "text-foreground"
+      )}
+      onClick={() => handleNavClick(item)}
+    >
+      {item.label}
+    </Button>
+  );
+})}
+
+       
           <Link to="/start-nu">
             <Button variant="hero" className="mt-2">
               Start Nu

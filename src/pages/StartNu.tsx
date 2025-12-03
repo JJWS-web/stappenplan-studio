@@ -59,12 +59,61 @@ const StartNu = () => {
     company: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [serverMessage, setServerMessage] = useState<string | null>(null);
+  const [serverError, setServerError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ selectedService, ...formData });
-    // Handle form submission
+
+    setServerMessage(null);
+    setServerError(null);
+
+    if (!selectedService) {
+      setServerError("Selecteer eerst een service.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const selected = services.find((s) => s.id === selectedService);
+
+      const response = await fetch("http://localhost/mail/send-email.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          selectedService,
+          selectedServiceLabel: selected?.title ?? selectedService,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.status === "success") {
+        setServerMessage(data.message || "Uw bericht is verzonden!");
+        // eventueel formulier leegmaken
+        setFormData({ name: "", email: "", company: "", message: "" });
+        setSelectedService("");
+      } else {
+        setServerError(data.message || "Er ging iets mis bij het verzenden.");
+      }
+    } catch (err) {
+      console.error(err);
+      setServerError("Er is een fout opgetreden. Probeer het later opnieuw.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+
+
 
   return (
     <main className="min-h-screen bg-background">
@@ -90,13 +139,15 @@ const StartNu = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div
-                key={service.id}
-                className={cn(
-                  "bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 animate-fade-up border-2",
-                  selectedService === service.id ? "border-primary" : "border-transparent"
-                )}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
+              key={service.id}
+              onClick={() => setSelectedService(service.id)}
+              className={cn(
+                "bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 animate-fade-up border-2 cursor-pointer",
+                selectedService === service.id ? "border-primary" : "border-transparent"
+              )}
+              style={{ animationDelay: `${index * 50}ms` }}
+            >
+            
                 <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center mb-4">
                   <service.icon className="h-6 w-6 text-primary-foreground" />
                 </div>
@@ -215,10 +266,24 @@ const StartNu = () => {
                 </div>
               </div>
 
-              <Button variant="hero" size="lg" className="w-full mt-6" type="submit">
-                Verstuur Aanvraag
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Button
+  variant="hero"
+  size="lg"
+  className="w-full mt-6"
+  type="submit"
+  disabled={isSubmitting}
+>
+  {isSubmitting ? "Versturen..." : "Verstuur Aanvraag"}
+  {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
+</Button>
+
+{serverMessage && (
+  <p className="mt-4 text-sm text-emerald-600">{serverMessage}</p>
+)}
+{serverError && (
+  <p className="mt-4 text-sm text-red-600">{serverError}</p>
+)}
+
             </form>
           </div>
         </div>
