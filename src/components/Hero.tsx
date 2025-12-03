@@ -10,6 +10,13 @@ const Hero = () => {
     }
   };
 
+  const scrollToContact = () => {
+    const element = document.querySelector("#contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -48,7 +55,7 @@ const Hero = () => {
               Ontdek Onze Aanpak
               <ArrowDown className="ml-2 h-5 w-5 animate-bounce" />
             </Button>
-            <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
+            <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" onClick={scrollToContact}>
               Neem Contact Op
             </Button>
           </div>
