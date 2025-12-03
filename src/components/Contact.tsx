@@ -20,35 +20,25 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
+              <a href="mailto:p.v.deutekom@mirada.nl" className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <Mail className="h-6 w-6 text-primary-foreground" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">E-mail</p>
-                  <p className="text-foreground font-medium">info@uwstappenplan.nl</p>
+                  <p className="text-foreground font-medium group-hover:text-primary transition-colors">p.v.deutekom@mirada.nl</p>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
+              <a href="tel:+31629531820" className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <Phone className="h-6 w-6 text-primary-foreground" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Telefoon</p>
-                  <p className="text-foreground font-medium">+31 (0)20 123 4567</p>
+                  <p className="text-foreground font-medium group-hover:text-primary transition-colors">+31 6 295 31 820</p>
                 </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
-                  <MapPin className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Locatie</p>
-                  <p className="text-foreground font-medium">Amsterdam, Nederland</p>
-                </div>
-              </div>
+              </a>
             </div>
           </div>
 
