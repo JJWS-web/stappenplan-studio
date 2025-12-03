@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { label: "Stappenplan", href: "/stappenplan", isPage: true },
   { label: "Time It", href: "/time-it", isPage: true },
-  { label: "Organisatie", href: "#organisatie", isPage: false },
+  { label: "Organisatie", href: "/organisatie", isPage: true },
   { label: "Contact", href: "#contact", isPage: false },
 ];
 

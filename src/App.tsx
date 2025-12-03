@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Stappenplan from "./pages/Stappenplan";
 import StartNu from "./pages/StartNu";
 import TimeIt from "./pages/TimeIt";
+import Organisatie from "./pages/Organisatie";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/stappenplan" element={<Stappenplan />} />
           <Route path="/start-nu" element={<StartNu />} />
           <Route path="/time-it" element={<TimeIt />} />
+          <Route path="/organisatie" element={<Organisatie />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
