@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Stappenplan", href: "#stappenplan" },
-  { label: "Time It", href: "#time-it" },
-  { label: "Organisatie", href: "#organisatie" },
-  { label: "Contact", href: "#contact" },
+  { label: "Stappenplan", href: "/stappenplan", isPage: true },
+  { label: "Time It", href: "#time-it", isPage: false },
+  { label: "Organisatie", href: "#organisatie", isPage: false },
+  { label: "Contact", href: "#contact", isPage: false },
 ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,9 +26,21 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (item: typeof navItems[0]) => {
     setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
+    
+    if (item.isPage) {
+      navigate(item.href);
+      return;
+    }
+    
+    // If we're not on homepage, navigate there first with the hash
+    if (location.pathname !== "/") {
+      navigate("/" + item.href);
+      return;
+    }
+    
+    const element = document.querySelector(item.href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -52,7 +66,7 @@ const Navbar = () => {
             <Button
               key={item.label}
               variant="nav"
-              onClick={() => handleNavClick(item.href)}
+              onClick={() => handleNavClick(item)}
             >
               {item.label}
             </Button>
@@ -86,7 +100,7 @@ const Navbar = () => {
               key={item.label}
               variant="ghost"
               className="justify-start"
-              onClick={() => handleNavClick(item.href)}
+              onClick={() => handleNavClick(item)}
             >
               {item.label}
             </Button>
