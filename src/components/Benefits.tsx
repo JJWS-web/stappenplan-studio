@@ -19,12 +19,12 @@ const benefits = [
 ];
 
 const checkItems = [
-  "Persoonlijke begeleiding",
-  "Flexibele aanpak",
-  "Continue ondersteuning",
-  "Transparante communicatie",
-  "Resultaatgarantie",
-  "Maatwerk oplossingen",
+  "Persoonlijke aanpak",
+  "Flexibel op maat",
+  "Continue support",
+  "Transparant",
+  "Resultaatgericht",
+  "Maatwerk",
 ];
 
 const Benefits = () => {

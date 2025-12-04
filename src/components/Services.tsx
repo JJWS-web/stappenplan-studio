@@ -1,7 +1,8 @@
 import { FileText, UserCheck, Megaphone, Shield, Settings, ClipboardCheck, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 
 const services = [
   {
@@ -10,7 +11,7 @@ const services = [
     title: "Contractmanagement",
     shortTitle: "CaaS",
     description: "Volledig beheer van uw contracten, van creatie tot verlenging.",
-    features: ["Contractbeheer", "Herinneringen", "Compliance"],
+    features: ["Beheer", "Alerts", "Compliance"],
     color: "primary",
   },
   {
@@ -18,8 +19,8 @@ const services = [
     icon: UserCheck,
     title: "Personal Assistant",
     shortTitle: "PAaaS",
-    description: "Uw persoonlijke assistent op afstand voor alle administratieve taken.",
-    features: ["Agenda", "E-mail", "Administratie"],
+    description: "Uw persoonlijke assistent op afstand voor alle taken.",
+    features: ["Agenda", "E-mail", "Admin"],
     color: "accent",
   },
   {
@@ -28,7 +29,7 @@ const services = [
     title: "Marketing",
     shortTitle: "MaaS",
     description: "Professionele marketing zonder eigen afdeling.",
-    features: ["Content", "Social media", "Campagnes"],
+    features: ["Content", "Social", "Campagnes"],
     color: "primary",
   },
   {
@@ -36,8 +37,8 @@ const services = [
     icon: Shield,
     title: "Disaster Recovery",
     shortTitle: "DRaaS",
-    description: "Bescherm uw bedrijfscontinuïteit met backup en recovery.",
-    features: ["Backup", "Calamiteitenplan", "Monitoring"],
+    description: "Bescherm uw bedrijfscontinuïteit met backup.",
+    features: ["Backup", "Herstel", "Monitoring"],
     color: "accent",
   },
   {
@@ -45,7 +46,7 @@ const services = [
     icon: Settings,
     title: "Implementatie",
     shortTitle: "Migratie",
-    description: "Soepele implementaties en migraties zonder onderbreking.",
+    description: "Soepele migraties zonder onderbreking.",
     features: ["Planning", "Migratie", "Support"],
     color: "primary",
   },
@@ -61,6 +62,61 @@ const services = [
 ];
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [serverMessage, setServerMessage] = useState<string | null>(null);
+  const [serverError, setServerError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setServerMessage(null);
+    setServerError(null);
+
+    if (!selectedService) {
+      setServerError("Selecteer eerst een service.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const selected = services.find((s) => s.id === selectedService);
+      const response = await fetch("http://localhost/mail/send-email.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          selectedService,
+          selectedServiceLabel: selected?.title ?? selectedService,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.status === "success") {
+        setServerMessage(data.message || "Uw bericht is verzonden!");
+        setFormData({ name: "", email: "", company: "", message: "" });
+        setSelectedService("");
+      } else {
+        setServerError(data.message || "Er ging iets mis bij het verzenden.");
+      }
+    } catch (err) {
+      console.error(err);
+      setServerError("Er is een fout opgetreden. Probeer het later opnieuw.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -78,13 +134,15 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {services.map((service, index) => (
             <div
               key={service.id}
+              onClick={() => setSelectedService(service.id)}
               className={cn(
-                "group relative bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2",
-                "animate-fade-up"
+                "group relative bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-500 hover:-translate-y-2 cursor-pointer border-2",
+                "animate-fade-up",
+                selectedService === service.id ? "border-primary" : "border-transparent"
               )}
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -123,14 +181,121 @@ const Services = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <Link to="/start-nu">
-            <Button variant="hero" size="lg">
-              Vraag informatie aan
-              <ArrowRight className="ml-2 h-5 w-5" />
+        {/* Contact Form */}
+        <div id="start-nu" className="max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Start Nu
+            </h2>
+            <p className="text-muted-foreground">
+              Selecteer een service en wij nemen contact met u op.
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 shadow-card">
+            {/* Service Selection */}
+            <div className="mb-8">
+              <label className="block text-sm font-medium text-foreground mb-4">
+                Selecteer een service *
+              </label>
+              <RadioGroup value={selectedService} onValueChange={setSelectedService} className="grid sm:grid-cols-2 gap-3">
+                {services.map((service) => (
+                  <label
+                    key={service.id}
+                    className={cn(
+                      "flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all",
+                      selectedService === service.id
+                        ? "border-primary bg-primary/5"
+                        : "border-border hover:border-primary/50"
+                    )}
+                  >
+                    <RadioGroupItem value={service.id} />
+                    <span className="text-sm text-foreground">{service.title}</span>
+                  </label>
+                ))}
+              </RadioGroup>
+            </div>
+
+            {/* Contact Fields */}
+            <div className="space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                    Naam *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    placeholder="Uw naam"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    E-mail *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    placeholder="uw@email.nl"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                  Bedrijfsnaam
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  value={formData.company}
+                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  placeholder="Uw bedrijf"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  Bericht
+                </label>
+                <textarea
+                  id="message"
+                  rows={3}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
+                  placeholder="Vertel ons meer over uw vraag..."
+                />
+              </div>
+            </div>
+
+            <Button
+              variant="hero"
+              size="lg"
+              className="w-full mt-6"
+              type="submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Versturen..." : "Verstuur Aanvraag"}
+              {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
             </Button>
-          </Link>
+
+            {serverMessage && (
+              <p className="mt-4 text-sm text-emerald-600">{serverMessage}</p>
+            )}
+            {serverError && (
+              <p className="mt-4 text-sm text-red-600">{serverError}</p>
+            )}
+          </form>
         </div>
       </div>
     </section>
