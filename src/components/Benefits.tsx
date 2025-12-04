@@ -68,7 +68,7 @@ const Benefits = () => {
                     <div className="w-6 h-6 rounded-full gradient-primary flex items-center justify-center flex-shrink-0">
                       <Check className="h-4 w-4 text-primary-foreground" />
                     </div>
-                    <span className="text-foreground font-medium">{item}</span>
+                    <span className="text-foreground font-medium whitespace-nowrap">{item}</span>
                   </div>
                 ))}
               </div>
