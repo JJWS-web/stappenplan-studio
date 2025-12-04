@@ -35,13 +35,13 @@ const Benefits = () => {
           {/* Left Content */}
           <div>
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Waarom Wij
+              Tandem Aanpak
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
               Onze Voordelen
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Plan, begeleiding én tools inbegrepen.
+              Persoonlijke begeleiding bij management- en procesuitdagingen.
             </p>
 
             {/* Check Items Grid */}
