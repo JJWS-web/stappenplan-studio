@@ -37,10 +37,10 @@ const Benefits = () => {
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Waarom Wij
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-4 mb-6">
               Onze Voordelen
             </h2>
-            <p className="text-muted-foreground text-lg mb-8">
+            <p className="text-muted-foreground text-base md:text-lg mb-8">
               Persoonlijke aanpak bij elke klant. Plan, begeleiding én tools.
             </p>
 
@@ -73,10 +73,10 @@ const Benefits = () => {
                   <benefit.icon className="h-7 w-7 text-primary-foreground" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>

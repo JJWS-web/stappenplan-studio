@@ -35,13 +35,13 @@ const Hero = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
             Bereik uw doelen met een{" "}
             <span className="text-gradient">helder stappenplan</span>
           </h1>
 
           {/* Subtext */}
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
+          <p className="text-base md:text-lg lg:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
             Complexe processen omgezet in concrete, uitvoerbare stappen.
           </p>
 

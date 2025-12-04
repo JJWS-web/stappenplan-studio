@@ -32,10 +32,10 @@ const Process = () => {
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Onze Werkwijze
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-4 mb-6">
             Onze Werkwijze
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base md:text-lg">
             Onze bewezen methodologie voor elk project.
           </p>
         </div>
@@ -69,10 +69,10 @@ const Process = () => {
 
                 {/* Content */}
                 <div className="pt-8">
-                  <h3 className="text-xl font-bold text-foreground mb-3">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </div>
