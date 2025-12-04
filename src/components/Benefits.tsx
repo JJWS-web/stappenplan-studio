@@ -3,28 +3,28 @@ import { Check, TrendingUp, Shield, Zap, Target } from "lucide-react";
 const benefits = [
   {
     icon: TrendingUp,
-    title: "Resultaten",
-    description: "Concrete KPI's en voortgangsrapportages.",
+    title: "Meetbare Resultaten",
+    description: "Concrete KPI's en voortgangsrapportages voor grip op uw projecten.",
   },
   {
     icon: Shield,
-    title: "Methodiek",
-    description: "Jarenlange ervaring en methoden.",
+    title: "Bewezen Methodiek",
+    description: "20+ jaar ervaring vertaald naar effectieve oplossingen.",
   },
   {
     icon: Zap,
-    title: "Implementatie",
-    description: "Direct aan de slag met oplossingen.",
+    title: "Direct Operationeel",
+    description: "Geen wachttijd, direct aan de slag met uw uitdagingen.",
   },
 ];
 
 const checkItems = [
-  "Persoonlijk",
-  "Flexibel",
-  "Support",
-  "Transparant",
-  "Resultaatgericht",
-  "Maatwerk",
+  "Geen vaste contracten",
+  "Flexibel opschalen",
+  "24/7 Support",
+  "Vaste contactpersoon",
+  "Resultaatgarantie",
+  "Op maat gemaakt",
 ];
 
 const Benefits = () => {
@@ -34,14 +34,14 @@ const Benefits = () => {
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-12">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-            Waarom Wij
+            Waarom Onze Diensten
           </span>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-4 mb-4">
-            Onze Voordelen
+            Focus op uw core business
           </h2>
           <div className="flex items-center justify-center gap-2 text-muted-foreground text-base md:text-lg">
             <Target className="h-5 w-5 text-primary" />
-            <span>Uw succes is onze prioriteit</span>
+            <span>Wij regelen de rest</span>
           </div>
         </div>
 
@@ -50,7 +50,7 @@ const Benefits = () => {
             {/* Left Content */}
             <div className="text-center md:text-left">
               <p className="text-muted-foreground text-base md:text-lg mb-8">
-                Persoonlijke aanpak met plan en begeleiding.
+                Bespaar tijd en kosten met onze as-a-Service oplossingen. Professionele ondersteuning zonder overhead.
               </p>
 
               {/* Check Items Grid */}
