@@ -1,7 +1,8 @@
-import { FileText, UserCheck, Megaphone, Shield, Settings, ClipboardCheck, Send } from "lucide-react";
+import { ArrowRight, FileText, UserCheck, Megaphone, Shield, Settings, ClipboardCheck } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 
 const services = [
   {
@@ -25,7 +26,7 @@ const services = [
     icon: Megaphone,
     title: "Marketing",
     shortTitle: "MaaS",
-    description: "Professionele marketing zonder eigen afdeling.",
+    description: "Professionele marketing zonder afdeling.",
     color: "primary",
   },
   {
@@ -55,6 +56,7 @@ const services = [
 ];
 
 const Services = () => {
+  const [selectedService, setSelectedService] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -70,8 +72,13 @@ const Services = () => {
     setServerMessage(null);
     setServerError(null);
 
-    const { name, email, message } = formData;
-    if (!name || !email || !message) {
+    if (!selectedService) {
+      setServerError("Selecteer eerst een service.");
+      return;
+    }
+
+    const { name, email } = formData;
+    if (!name || !email) {
       setServerError("Vul alle verplichte velden in.");
       return;
     }
@@ -79,6 +86,7 @@ const Services = () => {
     setIsSubmitting(true);
 
     try {
+      const selected = services.find((s) => s.id === selectedService);
       const response = await fetch("http://localhost/mail/send-email.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -87,16 +95,17 @@ const Services = () => {
           email: formData.email,
           company: formData.company,
           message: formData.message,
-          selectedService: "homepage",
-          selectedServiceLabel: "Homepage Contact",
+          selectedService,
+          selectedServiceLabel: selected?.title ?? selectedService,
         }),
       });
 
       const data = await response.json();
 
       if (data.status === "success") {
-        setServerMessage("Uw bericht is verzonden!");
+        setServerMessage("Uw aanvraag is verzonden!");
         setFormData({ name: "", email: "", company: "", message: "" });
+        setSelectedService("");
       } else {
         setServerError(data.message || "Er ging iets mis.");
       }
@@ -111,28 +120,30 @@ const Services = () => {
     <section id="services" className="py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center mb-16">
+        <div className="max-w-2xl mx-auto text-center mb-12">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Start Nu
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-4">
             Onze Diensten
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Kies de service die bij uw organisatie past.
+          <p className="text-muted-foreground">
+            Selecteer een service en wij nemen contact op.
           </p>
         </div>
 
-        {/* Two Column Layout: Services + Form */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        {/* Two Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-10 items-start max-w-6xl mx-auto">
           {/* Services Grid */}
           <div className="grid sm:grid-cols-2 gap-4">
             {services.map((service, index) => (
               <div
                 key={service.id}
+                onClick={() => setSelectedService(service.id)}
                 className={cn(
-                  "group relative bg-card rounded-xl p-5 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1",
-                  "animate-fade-up"
+                  "group relative bg-card rounded-xl p-5 shadow-card hover:shadow-glow transition-all duration-300 cursor-pointer border-2",
+                  "animate-fade-up",
+                  selectedService === service.id ? "border-primary" : "border-transparent hover:border-primary/30"
                 )}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
@@ -145,93 +156,127 @@ const Services = () => {
                   >
                     <service.icon className="h-5 w-5 text-primary-foreground" />
                   </div>
-                  <div>
-                    <h3 className="font-bold text-foreground text-sm">
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-foreground text-sm leading-tight">
                       {service.title}
                     </h3>
-                    <span className="text-primary text-xs font-medium">({service.shortTitle})</span>
-                    <p className="text-muted-foreground text-xs mt-1">
+                    <span className="text-primary text-xs font-medium">
+                      ({service.shortTitle})
+                    </span>
+                    <p className="text-muted-foreground text-xs mt-1 leading-snug">
                       {service.description}
                     </p>
                   </div>
                 </div>
+                {selectedService === service.id && (
+                  <div className="absolute top-2 right-2 w-3 h-3 rounded-full bg-primary" />
+                )}
               </div>
             ))}
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card rounded-2xl p-8 shadow-card">
+          <div className="bg-card rounded-2xl p-6 md:p-8 shadow-card">
             <h3 className="text-xl font-bold text-foreground mb-2">
-              Neem Contact Op
+              Vraag informatie aan
             </h3>
             <p className="text-muted-foreground text-sm mb-6">
-              Vragen? Wij nemen snel contact met u op.
+              Selecteer uw service en wij nemen snel contact op.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Service Selection */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-3">
+                  Selecteer een service *
+                </label>
+                <RadioGroup 
+                  value={selectedService} 
+                  onValueChange={setSelectedService} 
+                  className="grid grid-cols-2 gap-2"
+                >
+                  {services.map((service) => (
+                    <label
+                      key={service.id}
+                      className={cn(
+                        "flex items-center gap-2 p-2.5 rounded-lg border cursor-pointer transition-all text-sm",
+                        selectedService === service.id
+                          ? "border-primary bg-primary/5"
+                          : "border-border hover:border-primary/50"
+                      )}
+                    >
+                      <RadioGroupItem value={service.id} className="flex-shrink-0" />
+                      <span className="text-foreground text-xs font-medium truncate">
+                        {service.title}
+                      </span>
+                    </label>
+                  ))}
+                </RadioGroup>
+              </div>
+
+              {/* Contact Fields */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="home-name" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="service-name" className="block text-sm font-medium text-foreground mb-2">
                     Naam *
                   </label>
                   <input
                     type="text"
-                    id="home-name"
+                    id="service-name"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                    className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
                     placeholder="Uw naam"
                   />
                 </div>
                 <div>
-                  <label htmlFor="home-email" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="service-email" className="block text-sm font-medium text-foreground mb-2">
                     E-mail *
                   </label>
                   <input
                     type="email"
-                    id="home-email"
+                    id="service-email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                    className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
                     placeholder="uw@email.nl"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="home-company" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="service-company" className="block text-sm font-medium text-foreground mb-2">
                   Bedrijfsnaam
                 </label>
                 <input
                   type="text"
-                  id="home-company"
+                  id="service-company"
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                  className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
                   placeholder="Uw bedrijf (optioneel)"
                 />
               </div>
 
               <div>
-                <label htmlFor="home-message" className="block text-sm font-medium text-foreground mb-2">
-                  Bericht *
+                <label htmlFor="service-message" className="block text-sm font-medium text-foreground mb-2">
+                  Bericht
                 </label>
                 <textarea
-                  id="home-message"
-                  required
-                  rows={4}
+                  id="service-message"
+                  rows={3}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-all"
-                  placeholder="Vertel ons over uw vraag..."
+                  className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-all text-sm"
+                  placeholder="Uw vraag of opmerking..."
                 />
               </div>
 
               <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Versturen..." : "Verstuur Bericht"}
-                {!isSubmitting && <Send className="ml-2 h-5 w-5" />}
+                {isSubmitting ? "Versturen..." : "Verstuur Aanvraag"}
+                {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
               </Button>
 
               {serverMessage && (
