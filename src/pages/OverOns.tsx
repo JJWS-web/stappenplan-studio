@@ -84,11 +84,11 @@ const OverOns = () => {
       {/* Mission Section - Prose Style */}
       <section className="py-16 md:py-20 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center md:text-left">
+          <div className="max-w-3xl mx-auto text-center lg:text-left">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Onze Missie</span>
             <h2 className="text-2xl md:text-4xl font-bold text-foreground mt-4 mb-6 md:mb-8">Wat wij doen</h2>
             
-            <div className="prose prose-lg text-muted-foreground space-y-4 md:space-y-6 text-center md:text-left">
+            <div className="prose prose-lg text-muted-foreground space-y-4 md:space-y-6 text-center lg:text-left">
               <p className="text-base md:text-lg leading-relaxed">
                 Wij helpen organisaties om activiteiten en planningen <strong className="text-foreground">efficiënt te beheren en aan te sturen</strong>, waardoor gegarandeerd veel tijd en geld wordt bespaard.
               </p>
