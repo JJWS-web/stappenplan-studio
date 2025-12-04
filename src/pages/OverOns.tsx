@@ -268,6 +268,44 @@ const OverOns = () => {
         </div>
       </section>
 
+      {/* Additional Videos Section */}
+      <section className="py-16 md:py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">Video's</span>
+              <h2 className="text-2xl md:text-4xl font-bold text-foreground mt-4">Bekijk meer</h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Video 1 */}
+              <div className="group relative aspect-video bg-muted rounded-2xl overflow-hidden cursor-pointer">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="w-14 h-14 rounded-full gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-3">
+                    <Play className="h-7 w-7 text-primary-foreground ml-1" />
+                  </div>
+                  <h3 className="text-foreground font-semibold">Demo Video</h3>
+                  <span className="text-muted-foreground text-xs mt-1">Coming Soon</span>
+                </div>
+              </div>
+
+              {/* Video 2 */}
+              <div className="group relative aspect-video bg-muted rounded-2xl overflow-hidden cursor-pointer">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="w-14 h-14 rounded-full gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-3">
+                    <Play className="h-7 w-7 text-primary-foreground ml-1" />
+                  </div>
+                  <h3 className="text-foreground font-semibold">Klant Testimonial</h3>
+                  <span className="text-muted-foreground text-xs mt-1">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Podcast Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
