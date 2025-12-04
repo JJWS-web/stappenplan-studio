@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Clock, Zap, AlertTriangle, RefreshCw, Eye, MessageSquare, BarChart3, ExternalLink, Briefcase, Play, Quote } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Zap, AlertTriangle, Eye, MessageSquare, BarChart3, ExternalLink, Briefcase, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -40,13 +40,7 @@ const applications = [
   "Facturatie en operationele processen",
 ];
 
-const videos = [
-  { title: "Introductie Time IT", description: "Een korte introductie van ons platform" },
-  { title: "Demo Stappenplan", description: "Bekijk hoe een stappenplan wordt opgezet" },
-  { title: "Klant Testimonial", description: "Ervaringen van onze klanten" },
-];
-
-const Organisatie = () => {
+const OverOns = () => {
   const navigate = useNavigate();
 
   const scrollToContact = () => {
@@ -82,33 +76,6 @@ const Organisatie = () => {
               <p className="text-primary-foreground/90 font-medium">
                 Op basis van veel ervaring in het vakgebied hebben wij het product <span className="text-primary font-bold">Time IT</span> laten ontwikkelen.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider">Video's</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4">Bekijk onze video's</h2>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {videos.map((video, index) => (
-                <div key={index} className="group relative aspect-video bg-muted rounded-2xl overflow-hidden cursor-pointer animate-fade-up" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="w-14 h-14 rounded-full gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-3">
-                      <Play className="h-6 w-6 text-primary-foreground ml-1" />
-                    </div>
-                    <h3 className="text-foreground font-semibold text-sm">{video.title}</h3>
-                    <span className="text-muted-foreground text-xs mt-1">Coming Soon</span>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
@@ -231,35 +198,54 @@ const Organisatie = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* Timeline Section with Video */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">Onze Geschiedenis</span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4">Onze Reis</h2>
               <p className="text-muted-foreground text-lg mt-4">35+ jaar ervaring, gebundeld in Time IT</p>
             </div>
 
-            <div className="relative">
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary" />
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Timeline */}
+              <div className="relative">
+                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary" />
 
-              <div className="space-y-8">
-                {timeline.map((item, index) => (
-                  <div key={index} className={`flex flex-col md:flex-row gap-4 md:gap-8 animate-fade-up ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`} style={{ animationDelay: `${index * 100}ms` }}>
-                    <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
-                      <div className="bg-card rounded-2xl p-6 shadow-card">
-                        <span className="text-primary font-bold text-lg">{item.year}</span>
-                        <h3 className="text-xl font-bold text-foreground mt-2 mb-3">{item.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                <div className="space-y-6">
+                  {timeline.map((item, index) => (
+                    <div key={index} className="flex gap-6 animate-fade-up" style={{ animationDelay: `${index * 100}ms` }}>
+                      <div className="relative flex-shrink-0">
+                        <div className="w-8 h-8 rounded-full gradient-primary flex items-center justify-center">
+                          <div className="w-3 h-3 rounded-full bg-primary-foreground" />
+                        </div>
+                      </div>
+                      <div className="pb-6">
+                        <span className="text-primary font-bold text-sm">{item.year}</span>
+                        <h3 className="text-lg font-bold text-foreground mt-1 mb-2">{item.title}</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                       </div>
                     </div>
-                    <div className="hidden md:flex items-center justify-center">
-                      <div className="w-4 h-4 rounded-full gradient-primary border-4 border-background" />
+                  ))}
+                </div>
+              </div>
+
+              {/* Video Placeholder */}
+              <div className="lg:sticky lg:top-32">
+                <div className="group relative aspect-video bg-muted rounded-2xl overflow-hidden cursor-pointer">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="w-20 h-20 rounded-full gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-4">
+                      <Play className="h-10 w-10 text-primary-foreground ml-1" />
                     </div>
-                    <div className="flex-1" />
+                    <h3 className="text-foreground font-semibold text-lg">Introductie Video</h3>
+                    <span className="text-muted-foreground text-sm mt-2">Coming Soon</span>
                   </div>
-                ))}
+                </div>
+                <p className="text-muted-foreground text-center mt-4 text-sm">
+                  Binnenkort beschikbaar: onze introductie video over Time IT
+                </p>
               </div>
             </div>
           </div>
@@ -326,4 +312,4 @@ const Organisatie = () => {
   );
 };
 
-export default Organisatie;
+export default OverOns;
