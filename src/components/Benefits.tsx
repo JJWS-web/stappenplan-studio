@@ -58,7 +58,7 @@ const Benefits = () => {
               </p>
 
               {/* Check Items Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 w-full sm:w-fit mx-auto md:mx-0">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 w-fit mx-auto md:mx-0">
                 {checkItems.map((item, index) => (
                   <div
                     key={item}
