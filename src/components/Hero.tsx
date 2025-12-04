@@ -57,17 +57,17 @@ const Hero = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-16 flex flex-wrap items-center justify-center gap-8 text-primary-foreground animate-fade-up" style={{ animationDelay: "400ms" }}>
+          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 text-primary-foreground animate-fade-up" style={{ animationDelay: "400ms" }}>
             <div className="flex items-center gap-2">
               <span className="text-3xl font-bold text-primary">500+</span>
               <span className="text-sm">Projecten</span>
             </div>
-            <div className="w-px h-8 bg-primary-foreground/20" />
+            <div className="hidden sm:block w-px h-8 bg-primary-foreground/20" />
             <div className="flex items-center gap-2">
               <span className="text-3xl font-bold text-primary">98%</span>
               <span className="text-sm">Tevredenheid</span>
             </div>
-            <div className="w-px h-8 bg-primary-foreground/20" />
+            <div className="hidden sm:block w-px h-8 bg-primary-foreground/20" />
             <div className="flex items-center gap-2">
               <span className="text-3xl font-bold text-primary">20+</span>
               <span className="text-sm">Jaar Ervaring</span>
