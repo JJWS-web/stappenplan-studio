@@ -33,7 +33,7 @@ const Benefits = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div>
+          <div className="text-center lg:text-left">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Waarom Wij
             </span>
@@ -45,7 +45,7 @@ const Benefits = () => {
             </p>
 
             {/* Check Items Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 justify-items-center lg:justify-items-start">
               {checkItems.map((item, index) => (
                 <div
                   key={item}
