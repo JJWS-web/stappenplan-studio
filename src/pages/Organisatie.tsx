@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 const timeline = [
   {
@@ -117,8 +118,10 @@ const usps = [
 ];
 
 const Organisatie = () => {
+  const navigate = useNavigate();
+
   const scrollToContact = () => {
-    window.location.href = "/#contact";
+    navigate("/contact");
   };
 
   const openTimeItWebsite = () => {
