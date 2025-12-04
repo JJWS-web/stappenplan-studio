@@ -90,14 +90,17 @@ const OverOns = () => {
             
             <div className="prose prose-lg text-muted-foreground space-y-4 md:space-y-6 text-center md:text-left">
               <p className="text-base md:text-lg leading-relaxed">
-                Wij helpen organisaties activiteiten <strong className="text-foreground">efficiënt te beheren</strong>, waardoor tijd en geld wordt bespaard.
+                Wij helpen organisaties om activiteiten en planningen <strong className="text-foreground">efficiënt te beheren en aan te sturen</strong>, waardoor gegarandeerd veel tijd en geld wordt bespaard.
               </p>
               <p className="text-base md:text-lg leading-relaxed">
-                Activiteiten gestructureerd uitvoeren in <strong className="text-foreground">realtime</strong> met innovatieve communicatie.
+                Veel organisaties gebruiken Excel, maar dat is statisch en foutgevoelig. Wij voeren activiteiten <strong className="text-foreground">gestructureerd en in realtime</strong> uit met innovatieve communicatie en koppelingen met documenten.
+              </p>
+              <p className="text-base md:text-lg leading-relaxed">
+                Met ons dashboard en Gantt Chart heeft u <strong className="text-foreground">overal ter wereld controle</strong> via centrale, duidelijke communicatie en een complete audit trail.
               </p>
               <div className="border-l-4 border-primary pl-4 md:pl-6 py-2 my-6 md:my-8 bg-primary/5 rounded-r-lg text-left">
                 <p className="text-foreground font-medium italic m-0 text-sm md:text-base">
-                  "Dashboard met Gantt Chart voor controle overal ter wereld."
+                  "Time IT maakt het mogelijk om processen overal ter wereld te controleren en te volgen via centrale, duidelijke communicatie."
                 </p>
               </div>
             </div>
