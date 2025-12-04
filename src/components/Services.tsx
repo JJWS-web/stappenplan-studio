@@ -10,7 +10,7 @@ const services = [
     icon: FileText,
     title: "Contractmanagement",
     shortTitle: "CaaS",
-    description: "Volledig beheer van uw contracten.",
+    description: "Volledig contractbeheer.",
     color: "primary",
   },
   {
@@ -18,7 +18,7 @@ const services = [
     icon: UserCheck,
     title: "Personal Assistant",
     shortTitle: "PAaaS",
-    description: "Uw persoonlijke assistent op afstand.",
+    description: "Uw assistent op afstand.",
     color: "accent",
   },
   {
@@ -26,7 +26,7 @@ const services = [
     icon: Megaphone,
     title: "Marketing",
     shortTitle: "MaaS",
-    description: "Professionele marketing zonder afdeling.",
+    description: "Marketing zonder afdeling.",
     color: "primary",
   },
   {
@@ -34,7 +34,7 @@ const services = [
     icon: Shield,
     title: "Disaster Recovery",
     shortTitle: "DRaaS",
-    description: "Bescherm uw bedrijfscontinuïteit.",
+    description: "Bedrijfscontinuïteit.",
     color: "accent",
   },
   {
@@ -42,7 +42,7 @@ const services = [
     icon: Settings,
     title: "Implementatie",
     shortTitle: "Migratie",
-    description: "Soepele migraties zonder onderbreking.",
+    description: "Soepele migraties.",
     color: "primary",
   },
   {
@@ -50,7 +50,7 @@ const services = [
     icon: ClipboardCheck,
     title: "Audit Controle",
     shortTitle: "Audit",
-    description: "Volledige controle over uw audits.",
+    description: "Controle over audits.",
     color: "accent",
   },
 ];
