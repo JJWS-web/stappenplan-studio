@@ -55,7 +55,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="z-10">
-          <Logo />
+          <Logo isLight={!isScrolled} />
         </Link>
 
         {/* Desktop Navigation */}

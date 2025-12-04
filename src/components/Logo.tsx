@@ -3,9 +3,10 @@ import { cn } from "@/lib/utils";
 interface LogoProps {
   className?: string;
   showText?: boolean;
+  isLight?: boolean;
 }
 
-const Logo = ({ className, showText = true }: LogoProps) => {
+const Logo = ({ className, showText = true, isLight = false }: LogoProps) => {
   return (
     <div className={cn("flex items-center gap-3", className)}>
       <div className="relative flex items-end gap-0.5">
@@ -17,7 +18,7 @@ const Logo = ({ className, showText = true }: LogoProps) => {
       </div>
       {showText && (
         <span className="text-xl font-bold tracking-tight">
-          <span className="text-foreground">UW</span>
+          <span className={isLight ? "text-white" : "text-foreground"}>UW</span>
           <span className="text-gradient">Stappenplan</span>
         </span>
       )}
