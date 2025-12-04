@@ -9,7 +9,7 @@ const navItems = [
   { label: "Stappenplan", href: "/stappenplan", isPage: true },
   { label: "Time It", href: "/time-it", isPage: true },
   { label: "Organisatie", href: "/organisatie", isPage: true },
-  { label: "Contact", href: "#contact", isPage: false },
+  { label: "Contact", href: "/contact", isPage: true },
 ];
 
 const Navbar = () => {
@@ -76,7 +76,7 @@ const Navbar = () => {
             variant="hero" 
             size="sm" 
             className="ml-4"
-            onClick={() => handleNavClick({ label: "Start Nu", href: "#start-nu", isPage: false })}
+            onClick={() => handleNavClick({ label: "Contact", href: "/contact", isPage: true })}
           >
             Start Nu
           </Button>
@@ -126,7 +126,7 @@ const Navbar = () => {
           <Button 
             variant="hero" 
             className="mt-2"
-            onClick={() => handleNavClick({ label: "Start Nu", href: "#start-nu", isPage: false })}
+            onClick={() => handleNavClick({ label: "Contact", href: "/contact", isPage: true })}
           >
             Start Nu
           </Button>
