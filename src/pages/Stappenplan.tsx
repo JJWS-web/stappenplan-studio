@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
-import video from "../assets/stappenplan (2).mp4"
+import video from "../assets/TimeIT (1).mp4"
 
 const painPoints = [
   {
