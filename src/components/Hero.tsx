@@ -36,7 +36,7 @@ const Hero = () => {
 
           {/* Headline */}
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
-            Bereik uw doelen met een{" "}
+            Bereik uw doelen met een<br />
             <span className="text-gradient">helder stappenplan</span>
           </h1>
 
@@ -59,17 +59,17 @@ const Hero = () => {
           {/* Trust Indicators */}
           <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 text-primary-foreground animate-fade-up" style={{ animationDelay: "400ms" }}>
             <div className="flex items-center gap-2">
-              <span className="text-3xl font-bold text-primary w-16 text-right">500+</span>
+              <span className="text-3xl font-bold text-primary w-20 text-right">500+</span>
               <span className="text-sm">Projecten</span>
             </div>
             <div className="hidden sm:block w-px h-8 bg-primary-foreground/20" />
             <div className="flex items-center gap-2">
-              <span className="text-3xl font-bold text-primary w-16 text-right">98%</span>
+              <span className="text-3xl font-bold text-primary w-20 text-right">98%</span>
               <span className="text-sm">Tevredenheid</span>
             </div>
             <div className="hidden sm:block w-px h-8 bg-primary-foreground/20" />
             <div className="flex items-center gap-2">
-              <span className="text-3xl font-bold text-primary w-16 text-right">20+</span>
+              <span className="text-3xl font-bold text-primary w-20 text-right">20+</span>
               <span className="text-sm">Jaar Ervaring</span>
             </div>
           </div>
