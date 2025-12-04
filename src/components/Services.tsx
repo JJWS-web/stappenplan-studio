@@ -7,55 +7,55 @@ const services = [
   {
     id: "caas",
     icon: FileText,
-    title: "Contractmanagement-as-a-Service",
+    title: "Contractmanagement",
     shortTitle: "CaaS",
-    description: "Volledig beheer van uw contracten, van creatie tot verlenging. Nooit meer een deadline missen of ongunstige voorwaarden over het hoofd zien.",
-    features: ["Contractbeheer & tracking", "Automatische herinneringen", "Compliance monitoring"],
+    description: "Volledig beheer van uw contracten, van creatie tot verlenging.",
+    features: ["Contractbeheer", "Herinneringen", "Compliance"],
     color: "primary",
   },
   {
     id: "paas",
     icon: UserCheck,
-    title: "PersonalAssistant-as-a-Service",
+    title: "Personal Assistant",
     shortTitle: "PAaaS",
-    description: "Uw persoonlijke assistent op afstand. Agenda beheer, correspondentie en administratieve ondersteuning wanneer u het nodig heeft.",
-    features: ["Agenda & planning", "E-mail management", "Administratieve taken"],
+    description: "Uw persoonlijke assistent op afstand voor alle administratieve taken.",
+    features: ["Agenda", "E-mail", "Administratie"],
     color: "accent",
   },
   {
     id: "maas",
     icon: Megaphone,
-    title: "Marketing-as-a-Service",
+    title: "Marketing",
     shortTitle: "MaaS",
-    description: "Professionele marketing zonder eigen afdeling. Van strategie tot uitvoering, wij zorgen voor uw zichtbaarheid en groei.",
-    features: ["Content creatie", "Social media beheer", "Campagne management"],
+    description: "Professionele marketing zonder eigen afdeling.",
+    features: ["Content", "Social media", "Campagnes"],
     color: "primary",
   },
   {
     id: "draas",
     icon: Shield,
-    title: "DisasterRecovery-as-a-Service",
+    title: "Disaster Recovery",
     shortTitle: "DRaaS",
-    description: "Bescherm uw bedrijfscontinuïteit. Snelle recovery bij calamiteiten met geautomatiseerde backup en herstelprocessen.",
-    features: ["Backup & recovery", "Calamiteitenplan", "24/7 monitoring"],
+    description: "Bescherm uw bedrijfscontinuïteit met backup en recovery.",
+    features: ["Backup", "Calamiteitenplan", "Monitoring"],
     color: "accent",
   },
   {
     id: "implementatie",
     icon: Settings,
-    title: "Implementatie / Migratie",
-    shortTitle: "Implementatie",
-    description: "Soepele implementaties en migraties zonder onderbreking. Van planning tot uitvoering met minimale impact op uw dagelijkse operatie.",
-    features: ["Projectplanning", "Data migratie", "Training & support"],
+    title: "Implementatie",
+    shortTitle: "Migratie",
+    description: "Soepele implementaties en migraties zonder onderbreking.",
+    features: ["Planning", "Migratie", "Support"],
     color: "primary",
   },
   {
     id: "audit",
     icon: ClipboardCheck,
-    title: "Audit Proces Controle",
+    title: "Audit Controle",
     shortTitle: "Audit",
-    description: "Volledige controle over uw audit processen. Van voorbereiding tot afronding, altijd audit-ready met duidelijke stappenplannen.",
-    features: ["ISO certificering", "Compliance audits", "Procesoptimalisatie"],
+    description: "Volledige controle over uw audit processen.",
+    features: ["ISO", "Compliance", "Optimalisatie"],
     color: "accent",
   },
 ];
@@ -73,7 +73,7 @@ const Services = () => {
             Wat wij voor u kunnen betekenen
           </h2>
           <p className="text-muted-foreground text-lg">
-            Kies de service die bij uw organisatie past en ontdek hoe wij u kunnen ontzorgen.
+            Kies de service die bij uw organisatie past.
           </p>
         </div>
 

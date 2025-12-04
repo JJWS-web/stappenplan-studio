@@ -4,7 +4,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const scrollToServices = () => {
-    const element = document.querySelector("#stappenplan");
+    const element = document.querySelector("#services");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -46,7 +46,7 @@ const Hero = () => {
 
           {/* Subtext */}
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
-            Wij helpen organisaties en individuen hun ambities te realiseren door complexe processen om te zetten in concrete, uitvoerbare stappen.
+            Complexe processen omgezet in concrete, uitvoerbare stappen.
           </p>
 
           {/* CTAs */}

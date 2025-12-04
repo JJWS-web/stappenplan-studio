@@ -36,7 +36,7 @@ const Contact = () => {
         body: JSON.stringify({
           name,
           email,
-          company: subject, // Uses subject as company field in email for now
+          company: subject,
           message,
           selectedService: "contact",
           selectedServiceLabel: subject,
@@ -73,7 +73,7 @@ const Contact = () => {
               Klaar om te beginnen?
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Neem vrijblijvend contact met ons op. Wij bespreken graag de mogelijkheden voor uw situatie.
+              Neem vrijblijvend contact met ons op.
             </p>
 
             <div className="space-y-6">
@@ -164,7 +164,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary/50 resize-none"
-                  placeholder="Vertel ons meer over uw vraag of project..."
+                  placeholder="Vertel ons meer..."
                 />
               </div>
 
