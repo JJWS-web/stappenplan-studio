@@ -73,14 +73,16 @@ const Benefits = () => {
                 ))}
               </div>
 
-              <Button 
-                variant="hero" 
-                className="mt-8"
-                onClick={() => navigate("/organisatie")}
-              >
-                Over Ons
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <div className="mt-8">
+                <p className="text-sm text-muted-foreground mb-3">Meer weten over wie wij zijn?</p>
+                <Button 
+                  variant="hero" 
+                  onClick={() => navigate("/organisatie")}
+                >
+                  Over Ons
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
             </div>
 
             {/* Right Content - Benefit Cards */}
