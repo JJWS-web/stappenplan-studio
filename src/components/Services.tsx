@@ -149,7 +149,7 @@ const Services = () => {
             Onze Diensten
           </h2>
           <p className="text-muted-foreground text-sm md:text-base mb-2">
-            Geen personeel nodig, geen vaste lasten. Professionele ondersteuning op afroep.
+            Geen personeel nodig, geen vaste lasten.<br />Professionele ondersteuning op afroep.
           </p>
           <p className="text-muted-foreground text-xs md:text-sm">
             Klik op een service voor meer informatie.
