@@ -1,6 +1,8 @@
-import { CheckCircle2, User, Briefcase, Calendar, Award } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Zap, AlertTriangle, RefreshCw, Eye, MessageSquare, BarChart3, ExternalLink, Briefcase } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { cn } from "@/lib/utils";
 
 const timeline = [
   {
@@ -15,8 +17,8 @@ const timeline = [
   },
   {
     year: "2003",
-    title: "Oprichting Mirada BV",
-    description: "In 2003 richtte hij zijn eigen bedrijf op, genaamd Mirada BV.",
+    title: "Oprichting",
+    description: "In 2003 richtte hij zijn eigen bedrijf op.",
   },
   {
     year: "600+",
@@ -42,13 +44,93 @@ const whatWeDo = [
   "Het dashboard met een Gantt Chart van het Time IT product maakt het mogelijk om de activiteiten overal ter wereld te controleren en te volgen via een centrale, duidelijke communicatie en een audit trail",
 ];
 
+const painPoints = [
+  {
+    icon: Clock,
+    text: "Dagelijks achter taken aanrennen is tijdrovend voor Managers en Ondernemers!",
+  },
+  {
+    icon: Zap,
+    text: "Het continue zelf initiëren van werk en alles regelen kan uitputtend zijn.",
+  },
+  {
+    icon: MessageSquare,
+    text: "Daarnaast is het frustrerend om geen terugkoppeling te ontvangen nadat taken zijn afgerond.",
+  },
+  {
+    icon: Eye,
+    text: "En hoe hard je ook werkt, het totale overzicht ontbreekt, ongeacht waar je bent.",
+  },
+  {
+    icon: RefreshCw,
+    text: "Weer nieuwe wijzigingen tijdens de uitvoering, ik mis real time het totale overzicht!",
+  },
+  {
+    icon: AlertTriangle,
+    text: "Elke keer word ik gebeld voor een status update, terwijl ik bezig ben met het oplossen van allerlei problemen.",
+  },
+];
+
+const stappenplanBenefits = [
+  "De manager heeft de controle, waar hij ook is",
+  "De manager is er zeker van dat het proces verloopt zoals gepland",
+  "De manager bespaart gegarandeerd minimaal 40% tijd (bewezen bij andere klanten)",
+  "De manager kan rustig slapen omdat hij weet dat als er bijvoorbeeld een calamiteit uitbreekt in zijn organisatie, hij ervan verzekerd is dat er een actueel stappenplan in de Cloud direct beschikbaar is",
+  "Beheersbaar van de stappen die te allen tijde moeten worden uitgevoerd",
+  "Duidelijk en inzichtelijk van alle uit te voeren stappen",
+  "De manager hoeft zich geen zorgen te maken over alle communicatie (aansturen, reclameren en informeren) want dat gebeurt automatisch",
+  "De communicatie naar medewerkers, management en stakeholders is helder en consistent",
+  "De manager kan meer tijd besteden aan de menselijke factor van zijn mensen!",
+];
+
+const applications = [
+  "Een verzameling van activiteiten die door verschillende mensen in een bepaalde tijdsvolgorde en afhankelijkheid moeten worden uitgevoerd",
+  "Audits van certificeringen zoals ISO en andere standaard certificeringen",
+  "Implementaties, zowel functioneel als technisch van software en systemen",
+  "(Gegevens)migraties en verhuizingen van systemen en organisaties",
+  "Aansturing van veranderingsprocessen, transitie programma's en transformaties",
+  "Aansturing van processen zoals facturatie en andere operationele processen",
+  "Repeterende zaken via templates, zoals implementatie van software bij klanten",
+  "Calamiteiten zowel technisch als organisatorisch, ook een datalek",
+  "Uitvoering van diverse projecten en programma's binnen organisaties",
+  "Alles wat een stappenplan vereist en waar direct management voor nodig is en waar men real time, op elk willekeurig moment, elke plaats in controle wil zijn",
+];
+
+const timeItBenefits = [
+  { icon: Clock, text: "Tijdsbesparing bij de voorbereiding, maar ook bij de uitvoering (implementatie)" },
+  { icon: MessageSquare, text: "Communicatie is altijd consistent" },
+  { icon: Zap, text: "Eenvoudig, gebruiksvriendelijk, intuïtief, gemakkelijk te gebruiken" },
+  { icon: Eye, text: "Duidelijk, gestructureerd, alles is realtime zichtbaar zowel op hoofdlijnen als in detail, ongeacht waar je bent" },
+  { icon: BarChart3, text: "Inzetbaar voor elke branche, voor elke toepassing" },
+  { icon: CheckCircle2, text: "Gegarandeerde 40% tijdsbesparing" }
+];
+
+const usps = [
+  "Realtime inzicht",
+  "Digitale communicatie via e-mail en sms-berichten",
+  "Delen van informatie en voortgang via het dashboard",
+  "Starten van activiteiten, herinneringen en management informatie",
+  "Koppelen via URL's voor werkinstructies en allerlei relevante documenten",
+  "Logging voor evaluatie doeleinden/Risk Management",
+  "Ook direct inzetbaar voor eenmalige processen of herhalende processen, etc!",
+  "Klanten die ervaring hebben met Time IT",
+];
+
 const Organisatie = () => {
+  const scrollToContact = () => {
+    window.location.href = "/#contact";
+  };
+
+  const openTimeItWebsite = () => {
+    window.open("https://www.time-it.org/en/", "_blank", "noopener,noreferrer");
+  };
+
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-foreground via-foreground/95 to-primary/30 overflow-hidden">
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-foreground via-foreground/95 to-primary/30 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-8 animate-fade-up">
@@ -59,33 +141,286 @@ const Organisatie = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
-              <span className="text-gradient">Mirada</span> BV
+              Over <span className="text-gradient">Onze Organisatie</span>
             </h1>
 
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
-              Mirada BV is een organisatie die andere bedrijven helpt met project/programma management. De eigenaar van dit bedrijf, Peter van Deutekom, is al meer dan 35 jaar werkzaam in de IT branche.
+              Wij zijn een organisatie die andere bedrijven helpt met project/programma management. Onze oprichter, Peter van Deutekom, is al meer dan 35 jaar werkzaam in de IT branche.
             </p>
 
             <div className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "300ms" }}>
               <p className="text-primary-foreground/90 font-medium">
-                Hij heeft, op basis van veel ervaring in het vakgebied, het product <span className="text-primary font-bold">Time IT</span> laten ontwikkelen.
+                Op basis van veel ervaring in het vakgebied hebben wij het product <span className="text-primary font-bold">Time IT</span> laten ontwikkelen.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-
-      {/* Founder Section */}
-      <section className="py-24 bg-muted/50">
+      {/* What We Do Section - Our Mission */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-                De Oprichter
+                Onze Missie
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-                Peter van Deutekom
+                Wat wij doen
+              </h2>
+            </div>
+
+            <div className="space-y-4 mb-8">
+              {whatWeDo.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-4 bg-card rounded-xl p-5 shadow-card animate-fade-up"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="w-8 h-8 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <p className="text-foreground leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-muted/50 rounded-2xl p-6 text-center">
+              <p className="text-muted-foreground italic">
+                Vaak wordt Excel of andere middelen gebruikt, maar deze zijn statisch en richten zich niet op de stappen in de uitvoering (implementatie) zelf.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stappenplan & Time IT Intro Section */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+                Ons Aanbod
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+                Uw <span className="text-gradient">Stappenplan</span> met <span className="text-gradient">Time IT</span>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-6">
+                "Uw stappenplan" betekent dat het stappenplan/de planning door u op maat wordt gemaakt. U bepaalt welke activiteiten moeten plaatsvinden, in welke tijd, door wie en in welke volgorde.
+              </p>
+              <div className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 max-w-2xl mx-auto">
+                <p className="text-foreground font-medium">
+                  <span className="text-primary font-bold">Time IT</span> is de programmatuur voor de beheersing en besturing van "operationele" processen/projecten.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pain Points Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+                Herkenbaar?
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+                De dagelijkse frustraties van managers
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {painPoints.map((point, index) => (
+                <div
+                  key={index}
+                  className={cn(
+                    "flex gap-4 bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 animate-fade-up",
+                    "border-l-4 border-accent"
+                  )}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="w-12 h-12 rounded-xl gradient-accent flex items-center justify-center flex-shrink-0">
+                    <point.icon className="h-6 w-6 text-accent-foreground" />
+                  </div>
+                  <p className="text-foreground leading-relaxed">{point.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits & Solutions Section */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+                De Oplossing
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+                Hoe wij u helpen
+              </h2>
+              <p className="text-muted-foreground text-lg mb-8">
+                Time IT ontlast de manager of het management van een organisatie als volgt:
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4 mb-8">
+              {stappenplanBenefits.slice(0, 6).map((benefit, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 bg-card rounded-xl p-4 shadow-card animate-fade-up"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="w-6 h-6 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="h-4 w-4 text-primary-foreground" />
+                  </div>
+                  <p className="text-foreground text-sm leading-relaxed">{benefit}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-3">
+              {stappenplanBenefits.slice(6).map((benefit, index) => (
+                <div
+                  key={index + 6}
+                  className="flex items-start gap-3 bg-card rounded-xl p-4 shadow-card animate-fade-up"
+                  style={{ animationDelay: `${(index + 6) * 50}ms` }}
+                >
+                  <div className="w-6 h-6 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="h-4 w-4 text-primary-foreground" />
+                  </div>
+                  <p className="text-foreground text-sm leading-relaxed">{benefit}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Time IT Benefits Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-6">
+                <Clock className="h-4 w-4 text-primary" />
+                <span className="text-sm font-medium text-primary-foreground/90">
+                  Digitaal Procesbeheer
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+                Time <span className="text-gradient">IT</span> Voordelen
+              </h2>
+              <p className="text-muted-foreground text-lg mb-8 max-w-3xl mx-auto">
+                Time IT is een veelgebruikt digitaal programma dat mensen beheert met aanverwante activiteiten (proces) die in realtime in een bepaalde tijdsvolgorde moeten worden uitgevoerd.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4 mb-8">
+              {timeItBenefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 bg-card rounded-xl p-4 shadow-card animate-fade-up"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
+                    <benefit.icon className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <p className="text-foreground text-sm leading-relaxed pt-1.5">{benefit.text}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Button variant="hero" size="lg" onClick={openTimeItWebsite}>
+                Ontdek Time IT
+                <ExternalLink className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Applications & USPs Combined Section */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+                Toepassingen & Features
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+                Mogelijke toepassingen en unieke features
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              {applications.map((application, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 bg-card rounded-xl p-4 shadow-card hover:shadow-glow transition-all duration-300 animate-fade-up"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="w-6 h-6 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <CheckCircle2 className="h-4 w-4 text-primary-foreground" />
+                  </div>
+                  <p className="text-foreground text-sm leading-relaxed">{application}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Combined CTA Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8 border border-primary/20">
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Wilt u het zien met uw eigen proces?
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Wij bouwen het geheel vrijblijvend voor u om en laten u dan zien hoe het anders kan!
+                </p>
+                <Button variant="accent" size="lg" onClick={scrollToContact} className="w-full">
+                  Neem contact op
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8 border border-primary/20">
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Meer informatie over Time IT
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Bezoek de officiële Time IT website voor uitgebreide documentatie en demo's.
+                </p>
+                <Button variant="hero" size="lg" onClick={openTimeItWebsite} className="w-full">
+                  Bezoek Time IT Website
+                  <ExternalLink className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section - Moved to End */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+                Onze Geschiedenis
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+                Onze Reis
               </h2>
               <p className="text-muted-foreground text-lg">
                 Meer dan 35 jaar ervaring in de IT branche, gebundeld in Time IT
@@ -97,7 +432,7 @@ const Organisatie = () => {
               {/* Timeline line */}
               <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary" />
 
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {timeline.map((item, index) => (
                   <div
                     key={index}
@@ -125,48 +460,11 @@ const Organisatie = () => {
         </div>
       </section>
 
-      {/* What We Do Section */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-                Onze Missie
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-                Wat wij doen
-              </h2>
-            </div>
-
-            <div className="space-y-4">
-              {whatWeDo.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-4 bg-card rounded-xl p-5 shadow-card animate-fade-up"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <div className="w-8 h-8 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <CheckCircle2 className="h-5 w-5 text-primary-foreground" />
-                  </div>
-                  <p className="text-foreground leading-relaxed">{item}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 bg-muted/50 rounded-2xl p-6 text-center">
-              <p className="text-muted-foreground italic">
-                Vaak wordt Excel of andere middelen gebruikt, maar deze zijn statisch en richten zich niet op de stappen in de uitvoering (implementatie) zelf.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Podcast Section */}
-      <section className="py-24 bg-muted/50">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
+            <div className="text-center mb-8">
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">
                 Podcast
               </span>
@@ -189,7 +487,7 @@ const Organisatie = () => {
                 allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
-                title="Mirada BV Podcast"
+                title="Podcast"
               />
             </div>
           </div>
