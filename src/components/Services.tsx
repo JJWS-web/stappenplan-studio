@@ -218,7 +218,7 @@ const Services = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-3 md:px-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
-                    placeholder="Uw naam"
+                    placeholder="Jan Jansen"
                   />
                 </div>
                 <div>
@@ -232,7 +232,7 @@ const Services = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-3 md:px-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
-                    placeholder="uw@email.nl"
+                    placeholder="jan@bedrijf.nl"
                   />
                 </div>
               </div>
@@ -247,7 +247,7 @@ const Services = () => {
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   className="w-full px-3 md:px-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
-                  placeholder="Uw bedrijf (optioneel)"
+                  placeholder="Bedrijf BV"
                 />
               </div>
 
@@ -261,7 +261,7 @@ const Services = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-3 md:px-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-all text-sm"
-                  placeholder="Uw vraag of opmerking..."
+                  placeholder="Waar kunnen wij u mee helpen?"
                 />
               </div>
 
