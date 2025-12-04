@@ -66,6 +66,7 @@ const Navbar = () => {
             <Button
               key={item.label}
               variant="nav"
+              className={cn(!isScrolled && "text-white hover:text-white/80")}
               onClick={() => handleNavClick(item)}
             >
               {item.label}
