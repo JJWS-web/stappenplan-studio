@@ -62,21 +62,21 @@ const Benefits = () => {
           </div>
 
           {/* Right Content - Benefit Cards */}
-          <div className="space-y-6 flex flex-col items-center lg:items-stretch">
+          <div className="space-y-4 md:space-y-6">
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="flex gap-6 bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 animate-fade-up w-full max-w-md lg:max-w-none text-center lg:text-left items-center lg:items-start"
+                className="flex gap-4 md:gap-6 bg-card rounded-2xl p-4 md:p-6 shadow-card hover:shadow-glow transition-all duration-300 animate-fade-up items-center"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
-                  <benefit.icon className="h-7 w-7 text-primary-foreground" />
+                <div className="w-12 h-12 md:w-14 md:h-14 min-w-[48px] md:min-w-[56px] rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
+                  <benefit.icon className="h-6 w-6 md:h-7 md:w-7 text-primary-foreground" />
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
+                  <h3 className="text-base md:text-lg lg:text-xl font-bold text-foreground mb-1">
                     {benefit.title}
                   </h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-xs md:text-sm lg:text-base text-muted-foreground leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>
