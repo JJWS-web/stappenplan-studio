@@ -76,7 +76,7 @@ const Navbar = () => {
             variant="hero" 
             size="sm" 
             className="ml-4"
-            onClick={() => handleNavClick({ label: "Contact", href: "/contact", isPage: true })}
+            onClick={() => handleNavClick({ label: "Services", href: "#services", isPage: false })}
           >
             Start Nu
           </Button>
@@ -126,7 +126,7 @@ const Navbar = () => {
           <Button 
             variant="hero" 
             className="mt-2"
-            onClick={() => handleNavClick({ label: "Contact", href: "/contact", isPage: true })}
+            onClick={() => handleNavClick({ label: "Services", href: "#services", isPage: false })}
           >
             Start Nu
           </Button>
