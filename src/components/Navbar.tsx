@@ -82,7 +82,7 @@ const Navbar = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="lg:hidden"
+          className={cn("lg:hidden", !isScrolled && "text-white hover:text-white/80")}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
