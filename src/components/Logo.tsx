@@ -3,10 +3,10 @@ import { cn } from "@/lib/utils";
 interface LogoProps {
   className?: string;
   showText?: boolean;
-  isScrolled?: boolean;
+  isLight?: boolean;
 }
 
-const Logo = ({ className, showText = true, isScrolled = false }: LogoProps) => {
+const Logo = ({ className, showText = true, isLight = false }: LogoProps) => {
   return (
     <div className={cn("flex items-center gap-3", className)}>
       <div className="relative flex items-end gap-0.5">
@@ -18,7 +18,7 @@ const Logo = ({ className, showText = true, isScrolled = false }: LogoProps) => 
       </div>
       {showText && (
         <span className="text-xl font-bold tracking-tight">
-          <span className={!isScrolled ? "text-white" : "text-foreground"}>Uw</span>
+          <span className={isLight ? "text-white" : "text-foreground"}>Uw</span>
           <span className="text-gradient">stappenplan</span>
         </span>
       )}

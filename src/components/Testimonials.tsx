@@ -40,7 +40,7 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8 items-stretch">
+        <div className="grid md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}

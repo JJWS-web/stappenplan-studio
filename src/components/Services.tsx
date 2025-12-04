@@ -1,8 +1,8 @@
-import { ArrowRight, FileText, UserCheck, Megaphone, Shield, Settings, ClipboardCheck } from "lucide-react";
+import { ArrowRight, FileText, UserCheck, Megaphone, Shield, Settings, ClipboardCheck, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 
 const services = [
   {
@@ -12,6 +12,11 @@ const services = [
     shortTitle: "CaaS",
     description: "Volledig contractbeheer.",
     color: "primary",
+    details: [
+      "Volledig overzicht van al uw contracten, verplichtingen en deadlines op één centrale plek",
+      "Automatische herinneringen bij verloopdatums zodat u nooit meer een belangrijk moment mist",
+      "Compliance en risicobeheer geïntegreerd voor optimale controle over uw contractportfolio",
+    ],
   },
   {
     id: "paas",
@@ -20,6 +25,11 @@ const services = [
     shortTitle: "PAaaS",
     description: "Uw assistent op afstand.",
     color: "accent",
+    details: [
+      "Professionele administratieve ondersteuning op afstand door ervaren assistenten",
+      "Complete agenda- en mailbeheer zodat u zich kunt focussen op uw core business",
+      "Flexibele inzet die meegroeit met uw behoeften zonder vaste personeelskosten",
+    ],
   },
   {
     id: "maas",
@@ -28,6 +38,11 @@ const services = [
     shortTitle: "MaaS",
     description: "Marketing zonder afdeling.",
     color: "primary",
+    details: [
+      "Volledige marketingstrategie en uitvoering zonder eigen marketingafdeling nodig",
+      "Social media beheer en professionele contentcreatie afgestemd op uw doelgroep",
+      "Meetbare resultaten met heldere rapportages voor inzicht in uw marketing ROI",
+    ],
   },
   {
     id: "draas",
@@ -36,6 +51,11 @@ const services = [
     shortTitle: "DRaaS",
     description: "Bedrijfscontinuïteit.",
     color: "accent",
+    details: [
+      "Gegarandeerde uptime en beschikbaarheid van uw kritieke bedrijfssystemen",
+      "Automatische back-ups en uitgewerkte herstelplannen voor elke situatie",
+      "24/7 monitoring en directe ondersteuning bij calamiteiten en verstoringen",
+    ],
   },
   {
     id: "implementatie",
@@ -44,6 +64,11 @@ const services = [
     shortTitle: "Migratie",
     description: "Soepele migraties.",
     color: "primary",
+    details: [
+      "Professioneel projectmanagement van analyse tot oplevering en nazorg",
+      "Minimale verstoring van uw dagelijkse bedrijfsvoering tijdens het traject",
+      "Uitgebreide training en ondersteuning zodat uw team direct aan de slag kan",
+    ],
   },
   {
     id: "audit",
@@ -52,11 +77,16 @@ const services = [
     shortTitle: "Audit",
     description: "Controle over audits.",
     color: "accent",
+    details: [
+      "Volledige voorbereiding en begeleiding tijdens het gehele auditproces",
+      "Grondige documentatie en compliance check voor optimale voorbereiding",
+      "Concreet actieplan voor verbeterpunten met heldere prioriteiten en deadlines",
+    ],
   },
 ];
 
 const Services = () => {
-  const [selectedService, setSelectedService] = useState("");
+  const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -86,7 +116,6 @@ const Services = () => {
     setIsSubmitting(true);
 
     try {
-      const selected = services.find((s) => s.id === selectedService);
       const response = await fetch("http://localhost/mail/send-email.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -95,8 +124,6 @@ const Services = () => {
           email: formData.email,
           company: formData.company,
           message: formData.message,
-          selectedService,
-          selectedServiceLabel: selected?.title ?? selectedService,
         }),
       });
 
@@ -105,7 +132,6 @@ const Services = () => {
       if (data.status === "success") {
         setServerMessage("Uw aanvraag is verzonden!");
         setFormData({ name: "", email: "", company: "", message: "" });
-        setSelectedService("");
       } else {
         setServerError(data.message || "Er ging iets mis.");
       }
@@ -127,27 +153,29 @@ const Services = () => {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-3 md:mt-4 mb-3 md:mb-4">
             Onze Diensten
           </h2>
-          <p className="text-muted-foreground text-sm md:text-base">
-            Selecteer een service en wij nemen contact op.
+          <p className="text-muted-foreground text-sm md:text-base mb-2">
+            Geen personeel nodig, geen vaste lasten.<br />Professionele ondersteuning op afroep.
+          </p>
+          <p className="text-muted-foreground text-xs md:text-sm">
+            Klik op een service voor meer informatie.
           </p>
         </div>
 
         {/* Two Column Layout - stacks on mobile/tablet */}
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-start max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-stretch max-w-6xl mx-auto">
           {/* Services Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-rows-3 gap-3 md:gap-4">
             {services.map((service, index) => (
               <div
                 key={service.id}
-                onClick={() => setSelectedService(service.id)}
+                onClick={() => setSelectedService(service)}
                 className={cn(
-                  "group relative bg-card rounded-xl p-4 md:p-5 shadow-card hover:shadow-glow transition-all duration-300 cursor-pointer border-2",
-                  "animate-fade-up",
-                  selectedService === service.id ? "border-primary" : "border-transparent hover:border-primary/30"
+                  "group relative bg-card rounded-xl p-4 md:p-5 shadow-card hover:shadow-glow transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-primary/30 flex items-center",
+                  "animate-fade-up"
                 )}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <div className="flex items-start gap-3">
+                <div className="flex items-center gap-3">
                   <div
                     className={cn(
                       "w-9 h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110",
@@ -168,9 +196,6 @@ const Services = () => {
                     </p>
                   </div>
                 </div>
-                {selectedService === service.id && (
-                  <div className="absolute top-2 right-2 w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-primary" />
-                )}
               </div>
             ))}
           </div>
@@ -181,39 +206,10 @@ const Services = () => {
               Vraag informatie aan
             </h3>
             <p className="text-muted-foreground text-sm mb-4 md:mb-6">
-              Selecteer uw service en wij nemen snel contact op.
+              Vul het formulier in en wij nemen contact op.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
-              {/* Service Selection */}
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2 md:mb-3">
-                  Selecteer een service *
-                </label>
-                <RadioGroup 
-                  value={selectedService} 
-                  onValueChange={setSelectedService} 
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-2"
-                >
-                  {services.map((service) => (
-                    <label
-                      key={service.id}
-                      className={cn(
-                        "flex items-center gap-2 p-2 md:p-2.5 rounded-lg border cursor-pointer transition-all",
-                        selectedService === service.id
-                          ? "border-primary bg-primary/5"
-                          : "border-border hover:border-primary/50"
-                      )}
-                    >
-                      <RadioGroupItem value={service.id} className="flex-shrink-0" />
-                      <span className="text-foreground text-xs md:text-sm font-medium truncate">
-                        {service.title}
-                      </span>
-                    </label>
-                  ))}
-                </RadioGroup>
-              </div>
-
               {/* Contact Fields */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 <div>
@@ -227,7 +223,7 @@ const Services = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-3 md:px-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
-                    placeholder="Uw naam"
+                    placeholder="Jan Jansen"
                   />
                 </div>
                 <div>
@@ -241,7 +237,7 @@ const Services = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-3 md:px-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
-                    placeholder="uw@email.nl"
+                    placeholder="jan@bedrijf.nl"
                   />
                 </div>
               </div>
@@ -271,7 +267,7 @@ const Services = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-3 md:px-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none transition-all text-sm"
-                  placeholder="Uw vraag of opmerking..."
+                  placeholder="Waar kunnen wij u mee helpen?"
                 />
               </div>
 
@@ -294,6 +290,47 @@ const Services = () => {
           </div>
         </div>
       </div>
+
+      {/* Service Detail Modal */}
+      <Dialog open={!!selectedService} onOpenChange={() => setSelectedService(null)}>
+        <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-md p-5 sm:p-6 rounded-xl">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-3">
+              {selectedService && (
+                <>
+                  <div
+                    className={cn(
+                      "w-10 h-10 rounded-lg flex items-center justify-center",
+                      selectedService.color === "primary" ? "gradient-primary" : "gradient-accent"
+                    )}
+                  >
+                    <selectedService.icon className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <span className="text-foreground">{selectedService.title}</span>
+                    <span className="text-primary text-sm font-medium ml-2">({selectedService.shortTitle})</span>
+                  </div>
+                </>
+              )}
+            </DialogTitle>
+          </DialogHeader>
+          {selectedService && (
+            <div className="mt-4">
+              <p className="text-muted-foreground mb-4">{selectedService.description}</p>
+              <ul className="space-y-3">
+                {selectedService.details.map((detail, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-primary-foreground text-xs font-bold">{index + 1}</span>
+                    </div>
+                    <span className="text-foreground text-sm">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
