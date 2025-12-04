@@ -32,12 +32,12 @@ const benefits = [
 ];
 
 const applications = [
-  "Software implementaties",
-  "Migraties & verhuizingen",
-  "Audits & certificeringen",
-  "Disaster recovery",
-  "Veranderingsprocessen",
-  "Operationele processen",
+  "Software",
+  "Migraties",
+  "Audits",
+  "Calamiteiten",
+  "Transitie",
+  "Processen",
 ];
 
 const OverOns = () => {
