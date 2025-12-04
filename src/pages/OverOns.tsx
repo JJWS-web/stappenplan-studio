@@ -82,22 +82,22 @@ const OverOns = () => {
       </section>
 
       {/* Mission Section - Prose Style */}
-      <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
+      <section className="py-16 md:py-20 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center md:text-left">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Onze Missie</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-8">Wat wij doen</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mt-4 mb-6 md:mb-8">Wat wij doen</h2>
             
-            <div className="prose prose-lg text-muted-foreground space-y-6">
-              <p className="text-lg leading-relaxed">
-                Wij helpen (IT) organisaties om een verzameling van activiteiten en planningen <strong className="text-foreground">efficiënt te beheren en aan te sturen</strong>, waardoor gegarandeerd veel tijd en dus geld wordt bespaard.
+            <div className="prose prose-lg text-muted-foreground space-y-4 md:space-y-6 text-center md:text-left">
+              <p className="text-base md:text-lg leading-relaxed">
+                Wij helpen organisaties activiteiten <strong className="text-foreground">efficiënt te beheren</strong>, waardoor tijd en geld wordt bespaard.
               </p>
-              <p className="text-lg leading-relaxed">
-                Veel organisaties gebruiken Excel, maar dat is allemaal statisch, foutgevoelig en tijdrovend. Wij zijn in staat om activiteiten gestructureerd uit te voeren in <strong className="text-foreground">realtime</strong> met innovatieve communicatie en koppelingen met documenten.
+              <p className="text-base md:text-lg leading-relaxed">
+                Activiteiten gestructureerd uitvoeren in <strong className="text-foreground">realtime</strong> met innovatieve communicatie.
               </p>
-              <div className="border-l-4 border-primary pl-6 py-2 my-8 bg-primary/5 rounded-r-lg">
-                <p className="text-foreground font-medium italic m-0">
-                  "Het dashboard met Gantt Chart maakt het mogelijk om activiteiten overal ter wereld te controleren via centrale, duidelijke communicatie."
+              <div className="border-l-4 border-primary pl-4 md:pl-6 py-2 my-6 md:my-8 bg-primary/5 rounded-r-lg text-left">
+                <p className="text-foreground font-medium italic m-0 text-sm md:text-base">
+                  "Dashboard met Gantt Chart voor controle overal ter wereld."
                 </p>
               </div>
             </div>
@@ -269,17 +269,17 @@ const OverOns = () => {
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div className="text-center md:text-left">
                 <span className="text-primary font-semibold text-sm uppercase tracking-wider">Podcast</span>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-4">
+                <h2 className="text-2xl md:text-4xl font-bold text-foreground mt-4 mb-3 md:mb-4">
                   Luister naar onze podcast
                 </h2>
-                <p className="text-muted-foreground text-lg mb-6">
-                  Ontdek meer over onze visie, ervaringen en de ontwikkeling van Time IT.
+                <p className="text-muted-foreground mb-4 md:mb-6">
+                  Ontdek onze visie en ervaringen
                 </p>
                 <Button variant="hero" size="lg" onClick={openTimeItWebsite}>
-                  Bezoek Time IT Website
+                  Time IT Website
                   <ExternalLink className="ml-2 h-5 w-5" />
                 </Button>
               </div>
