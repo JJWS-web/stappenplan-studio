@@ -162,12 +162,12 @@ const Services = () => {
                 key={service.id}
                 onClick={() => setSelectedService(service)}
                 className={cn(
-                  "group relative bg-card rounded-xl p-4 md:p-5 shadow-card hover:shadow-glow transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-primary/30",
+                  "group relative bg-card rounded-xl p-4 md:p-5 shadow-card hover:shadow-glow transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-primary/30 flex items-center",
                   "animate-fade-up"
                 )}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <div className="flex items-start gap-3">
+                <div className="flex items-center gap-3">
                   <div
                     className={cn(
                       "w-9 h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110",
