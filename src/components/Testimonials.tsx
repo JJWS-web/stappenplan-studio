@@ -31,10 +31,10 @@ const Testimonials = () => {
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Ervaringen
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-4 mb-6">
             Klantervaringen
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base md:text-lg">
             Ontdek hoe wij anderen hebben geholpen.
           </p>
         </div>
@@ -61,7 +61,7 @@ const Testimonials = () => {
               </div>
 
               {/* Content */}
-              <p className="text-foreground leading-relaxed mb-6 relative z-10 flex-grow">
+              <p className="text-sm md:text-base text-foreground leading-relaxed mb-6 relative z-10 flex-grow">
                 "{testimonial.content}"
               </p>
 
