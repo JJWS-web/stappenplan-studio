@@ -23,9 +23,9 @@ const ContactPage = () => {
     setServerMessage(null);
     setServerError(null);
 
-    const { name, email, subject, message } = formData;
+    const { name, email, company, subject, message } = formData;
 
-    if (!name || !email || !subject || !message) {
+    if (!name || !email || !company || !subject || !message) {
       setServerError("Vul alle verplichte velden in.");
       return;
     }
@@ -51,6 +51,7 @@ const ContactPage = () => {
       if (data.status === "success") {
         setServerMessage("Uw bericht is succesvol verzonden!");
         setFormData({ name: "", email: "", company: "", subject: "", message: "" });
+        setServerError(null);
       } else {
         setServerError(data.message || "Fout bij verzenden.");
       }
@@ -100,13 +101,13 @@ const ContactPage = () => {
                     Contactgegevens
                   </h2>
                   <p className="text-muted-foreground">
-                    Neem direct contact met ons op via onderstaande mogelijkheden.
+                    Neem contact met ons op via onderstaande mogelijkheden.
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   <a 
-                    href="mailto:p.v.deutekom@mirada.nl" 
+                    href="mailto:service@uwstappenplan.nl" 
                     className="flex items-center gap-4 bg-card rounded-xl p-4 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 group"
                   >
                     <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -115,13 +116,13 @@ const ContactPage = () => {
                     <div>
                       <h3 className="font-semibold text-foreground">E-mail</h3>
                       <p className="text-primary text-sm group-hover:underline">
-                        p.v.deutekom@mirada.nl
+                        service@uwstappenplan.nl
                       </p>
                     </div>
                   </a>
 
                   <a 
-                    href="tel:+31629531820" 
+                    href="tel:0850046524" 
                     className="flex items-center gap-4 bg-card rounded-xl p-4 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 group"
                   >
                     <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -130,7 +131,7 @@ const ContactPage = () => {
                     <div>
                       <h3 className="font-semibold text-foreground">Telefoon</h3>
                       <p className="text-primary text-sm group-hover:underline">
-                        +31 6 295 31 820
+                        085 004 6524
                       </p>
                     </div>
                   </a>
@@ -187,35 +188,34 @@ const ContactPage = () => {
                     </div>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                        Bedrijfsnaam
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                        placeholder="Optioneel"
-                      />
-                    </div>
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                      Bedrijfsnaam *
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      required
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                      placeholder="Uw bedrijfsnaam"
+                    />
+                  </div>
 
-                    <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                        Onderwerp *
-                      </label>
-                      <input
-                        type="text"
-                        id="subject"
-                        required
-                        value={formData.subject}
-                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                        placeholder="Onderwerp"
-                      />
-                    </div>
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                      Onderwerp *
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      required
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                      placeholder="Onderwerp"
+                    />
                   </div>
 
                   <div>

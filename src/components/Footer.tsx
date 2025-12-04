@@ -35,13 +35,13 @@ const Footer = () => {
               >
                 <Phone className="h-5 w-5" />
               </a>
-              <a
-                href="mailto:p.v.deutekom@mirada.nl"
-                className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
-                aria-label="Email"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
+                  <a 
+                    href="mailto:service@uwstappenplan.nl" 
+                    className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
+                    aria-label="Email"
+                  >
+                    <Mail className="h-5 w-5" />
+                  </a>
               <a
                 href="https://twitter.com/uwstappenplan"
                 target="_blank"
@@ -68,18 +68,8 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-6">Navigatie</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/stappenplan" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Stappenplan
-                </Link>
-              </li>
-              <li>
-                <Link to="/time-it" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Time It
-                </Link>
-              </li>
-              <li>
                 <Link to="/organisatie" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Organisatie
+                  Over Ons
                 </Link>
               </li>
               <li>
@@ -90,10 +80,28 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Contact Info */}
           <div>
-            <h3 className="font-bold text-lg mb-6">Juridisch</h3>
+            <h3 className="font-bold text-lg mb-6">Contact</h3>
             <ul className="space-y-3">
+              <li>
+                <a 
+                  href="mailto:service@uwstappenplan.nl" 
+                  className="text-primary-foreground/70 hover:text-primary transition-colors flex items-center gap-2"
+                >
+                  <Mail className="h-4 w-4" />
+                  service@uwstappenplan.nl
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="tel:0850046524" 
+                  className="text-primary-foreground/70 hover:text-primary transition-colors flex items-center gap-2"
+                >
+                  <Phone className="h-4 w-4" />
+                  085 004 6524
+                </a>
+              </li>
               <li>
                 <Link to="/privacy" className="text-primary-foreground/70 hover:text-primary transition-colors">
                   Privacy Policy

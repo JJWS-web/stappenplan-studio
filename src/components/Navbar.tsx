@@ -17,12 +17,18 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const handleScroll = () => {
+    const checkScroll = () => {
+      // On all pages, check scroll position - transparent at top, white when scrolled
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    
+    // Check immediately on mount/route change
+    checkScroll();
+    
+    // Listen to scroll events on all pages
+    window.addEventListener("scroll", checkScroll);
+    return () => window.removeEventListener("scroll", checkScroll);
+  }, [location.pathname]);
 
   const handleNavClick = (item: typeof navItems[0]) => {
     setIsMobileMenuOpen(false);
@@ -55,7 +61,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="z-10">
-          <Logo />
+          <Logo isScrolled={isScrolled} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -70,13 +76,6 @@ const Navbar = () => {
               {item.label}
             </Button>
           ))}
-          <Button
-            variant="nav"
-            className={cn("ml-4", !isScrolled && "text-white hover:text-white/80")}
-            onClick={() => handleNavClick({ label: "Services", href: "#services", isPage: false })}
-          >
-            Start Nu
-          </Button>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -118,15 +117,6 @@ const Navbar = () => {
     </Button>
   );
 })}
-       
-        
-          <Button 
-            variant="ghost" 
-            className="mt-2 justify-start"
-            onClick={() => handleNavClick({ label: "Services", href: "#services", isPage: false })}
-          >
-            Start Nu
-          </Button>
         </nav>
       </div>
     </header>

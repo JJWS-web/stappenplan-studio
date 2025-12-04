@@ -77,8 +77,8 @@ const Services = () => {
       return;
     }
 
-    const { name, email } = formData;
-    if (!name || !email) {
+    const { name, email, company } = formData;
+    if (!name || !email || !company) {
       setServerError("Vul alle verplichte velden in.");
       return;
     }
@@ -248,21 +248,22 @@ const Services = () => {
 
               <div>
                 <label htmlFor="service-company" className="block text-sm font-medium text-foreground mb-1.5 md:mb-2">
-                  Bedrijfsnaam
+                  Bedrijfsnaam *
                 </label>
                 <input
                   type="text"
                   id="service-company"
+                  required
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   className="w-full px-3 md:px-4 py-2.5 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
-                  placeholder="Uw bedrijf (optioneel)"
+                  placeholder="Uw bedrijfsnaam"
                 />
               </div>
 
               <div>
                 <label htmlFor="service-message" className="block text-sm font-medium text-foreground mb-1.5 md:mb-2">
-                  Bericht
+                  Bericht (optioneel)
                 </label>
                 <textarea
                   id="service-message"
