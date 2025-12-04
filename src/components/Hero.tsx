@@ -1,17 +1,13 @@
 import { ArrowDown, CheckCircle2 } from "lucide-react";
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   const scrollToServices = () => {
     const element = document.querySelector("#services");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -51,10 +47,10 @@ const Hero = () => {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: "300ms" }}>
             <Button variant="hero" size="lg" onClick={scrollToServices}>
-              Ontdek Onze Aanpak
+              Ontdek Onze Diensten
               <ArrowDown className="ml-2 h-5 w-5 animate-bounce" />
             </Button>
-            <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" onClick={scrollToContact}>
+            <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" onClick={() => navigate("/contact")}>
               Neem Contact Op
             </Button>
           </div>
