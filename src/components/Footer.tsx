@@ -4,111 +4,42 @@ import { Mail, Phone, MapPin } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-foreground text-primary-foreground">
-      {/* Link Columns Section */}
+      {/* Link Column Section */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-          {/* Diensten */}
-          <div>
-            <h3 className="font-bold text-lg mb-6">Diensten</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Contractmanagement
-                </Link>
-              </li>
-              <li>
-                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Personal Assistant
-                </Link>
-              </li>
-              <li>
-                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Marketing
-                </Link>
-              </li>
-              <li>
-                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Disaster Recovery
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Oplossingen */}
-          <div>
-            <h3 className="font-bold text-lg mb-6">Oplossingen</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Implementatie
-                </Link>
-              </li>
-              <li>
-                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Migratie
-                </Link>
-              </li>
-              <li>
-                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Audit Processen
-                </Link>
-              </li>
-              <li>
-                <Link to="/time-it" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Time IT
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Informatie */}
-          <div>
-            <h3 className="font-bold text-lg mb-6">Informatie</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/organisatie" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Over Ons
-                </Link>
-              </li>
-              <li>
-                <Link to="/stappenplan" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Stappenplan
-                </Link>
-              </li>
-              <li>
-                <Link to="/#process" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Werkwijze
-                </Link>
-              </li>
-              <li>
-                <Link to="/#testimonials" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Testimonials
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h3 className="font-bold text-lg mb-6">Support</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/#contact" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/privacy" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/voorwaarden" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Algemene Voorwaarden
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div className="max-w-xs">
+          <h3 className="font-bold text-lg mb-6">Diensten</h3>
+          <ul className="space-y-3">
+            <li>
+              <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                Contractmanagement
+              </Link>
+            </li>
+            <li>
+              <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                Personal Assistant
+              </Link>
+            </li>
+            <li>
+              <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                Marketing
+              </Link>
+            </li>
+            <li>
+              <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                Disaster Recovery
+              </Link>
+            </li>
+            <li>
+              <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                Implementatie
+              </Link>
+            </li>
+            <li>
+              <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                Migratie
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
 
