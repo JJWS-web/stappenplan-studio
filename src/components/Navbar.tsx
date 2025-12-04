@@ -6,9 +6,7 @@ import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Stappenplan", href: "/stappenplan", isPage: true },
-  { label: "Time It", href: "/time-it", isPage: true },
-  { label: "Organisatie", href: "/organisatie", isPage: true },
+  { label: "Over Ons", href: "/organisatie", isPage: true },
   { label: "Contact", href: "/contact", isPage: true },
 ];
 
@@ -72,10 +70,9 @@ const Navbar = () => {
               {item.label}
             </Button>
           ))}
-          <Button 
-            variant="hero" 
-            size="sm" 
-            className="ml-4"
+          <Button
+            variant="nav"
+            className={cn("ml-4", !isScrolled && "text-white hover:text-white/80")}
             onClick={() => handleNavClick({ label: "Services", href: "#services", isPage: false })}
           >
             Start Nu
@@ -121,11 +118,11 @@ const Navbar = () => {
     </Button>
   );
 })}
-
        
+        
           <Button 
-            variant="hero" 
-            className="mt-2"
+            variant="ghost" 
+            className="mt-2 justify-start"
             onClick={() => handleNavClick({ label: "Services", href: "#services", isPage: false })}
           >
             Start Nu
