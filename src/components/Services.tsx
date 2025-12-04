@@ -156,7 +156,7 @@ const Services = () => {
         {/* Two Column Layout - stacks on mobile/tablet */}
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-stretch max-w-6xl mx-auto">
           {/* Services Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 content-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-rows-3 gap-3 md:gap-4">
             {services.map((service, index) => (
               <div
                 key={service.id}
