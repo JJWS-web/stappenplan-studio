@@ -82,9 +82,15 @@ const ContactPage = () => {
               Neem <span className="text-gradient">Contact</span> Op
             </h1>
 
-            <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
-              Op basis van veel ervaring in het vakgebied hebben wij het product Time IT laten ontwikkelen.
+            <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
+              Heeft u vragen over Time IT of onze diensten? Wij helpen u graag verder.
             </p>
+
+            <div className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "300ms" }}>
+              <p className="text-primary-foreground/90 font-medium">
+                Op basis van veel ervaring in het vakgebied hebben wij het product <span className="text-primary font-bold">Time IT</span> laten ontwikkelen.
+              </p>
+            </div>
           </div>
         </div>
       </section>
