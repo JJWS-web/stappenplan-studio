@@ -1,7 +1,29 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
+import { services, Service } from "@/data/services";
+import { cn } from "@/lib/utils";
 
 const Footer = () => {
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+
+  const footerServices = [
+    { label: "Contractmanagement", id: "caas" },
+    { label: "Personal Assistant", id: "paas" },
+    { label: "Marketing", id: "maas" },
+    { label: "Disaster Recovery", id: "draas" },
+    { label: "Implementatie", id: "implementatie" },
+    { label: "Audit Controle", id: "audit" },
+  ];
+
+  const handleServiceClick = (serviceId: string) => {
+    const service = services.find(s => s.id === serviceId);
+    if (service) {
+      setSelectedService(service);
+    }
+  };
+
   return (
     <footer className="bg-foreground text-primary-foreground">
       {/* Link Column Section */}
@@ -9,36 +31,16 @@ const Footer = () => {
         <div className="max-w-xs mx-auto text-center">
           <h3 className="font-bold text-lg mb-6">Diensten</h3>
           <ul className="space-y-3">
-            <li>
-              <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                Contractmanagement
-              </Link>
-            </li>
-            <li>
-              <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                Personal Assistant
-              </Link>
-            </li>
-            <li>
-              <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                Marketing
-              </Link>
-            </li>
-            <li>
-              <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                Disaster Recovery
-              </Link>
-            </li>
-            <li>
-              <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                Implementatie
-              </Link>
-            </li>
-            <li>
-              <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                Migratie
-              </Link>
-            </li>
+            {footerServices.map((service) => (
+              <li key={service.id}>
+                <button
+                  onClick={() => handleServiceClick(service.id)}
+                  className="text-primary-foreground/70 hover:text-primary transition-colors"
+                >
+                  {service.label}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -122,6 +124,47 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Service Detail Modal */}
+      <Dialog open={!!selectedService} onOpenChange={() => setSelectedService(null)}>
+        <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-md p-5 sm:p-6 rounded-xl">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-3">
+              {selectedService && (
+                <>
+                  <div
+                    className={cn(
+                      "w-10 h-10 rounded-lg flex items-center justify-center",
+                      selectedService.color === "primary" ? "gradient-primary" : "gradient-accent"
+                    )}
+                  >
+                    <selectedService.icon className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <span className="text-foreground">{selectedService.title}</span>
+                    <span className="text-primary text-sm font-medium ml-2">({selectedService.shortTitle})</span>
+                  </div>
+                </>
+              )}
+            </DialogTitle>
+          </DialogHeader>
+          {selectedService && (
+            <div className="mt-4">
+              <p className="text-muted-foreground mb-4">{selectedService.description}</p>
+              <ul className="space-y-3">
+                {selectedService.details.map((detail, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-primary-foreground text-xs font-bold">{index + 1}</span>
+                    </div>
+                    <span className="text-foreground text-sm">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </footer>
   );
 };
