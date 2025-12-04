@@ -149,7 +149,7 @@ const Services = () => {
             Onze Diensten
           </h2>
           <p className="text-muted-foreground text-sm md:text-base mb-2">
-            Professionele as-a-Service oplossingen voor uw bedrijf.
+            Geen personeel nodig, geen vaste lasten. Professionele ondersteuning op afroep.
           </p>
           <p className="text-muted-foreground text-xs md:text-sm">
             Klik op een service voor meer informatie.
