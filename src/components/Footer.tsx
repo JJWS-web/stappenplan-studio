@@ -17,7 +17,7 @@ const Footer = () => {
                 <div className="w-2 h-9 rounded-sm bg-accent" />
               </div>
               <span className="text-xl font-bold tracking-tight text-primary-foreground">
-                UW<span className="text-primary">Stappenplan</span>
+                Uw<span className="text-primary">stappenplan</span>
               </span>
             </div>
             <p className="text-primary-foreground/70 max-w-md mb-6">
