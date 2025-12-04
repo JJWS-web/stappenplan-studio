@@ -3,17 +3,17 @@ import { Check, TrendingUp, Shield, Zap } from "lucide-react";
 const benefits = [
   {
     icon: TrendingUp,
-    title: "Meetbare Resultaten",
+    title: "Resultaten",
     description: "Concrete KPI's en duidelijke voortgangsrapportages.",
   },
   {
     icon: Shield,
-    title: "Bewezen Methodiek",
+    title: "Methodiek",
     description: "Jarenlange ervaring en onderbouwde methoden.",
   },
   {
     icon: Zap,
-    title: "Snelle Implementatie",
+    title: "Implementatie",
     description: "Direct aan de slag met praktische oplossingen.",
   },
 ];
@@ -62,11 +62,11 @@ const Benefits = () => {
           </div>
 
           {/* Right Content - Benefit Cards */}
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col items-center lg:items-stretch">
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="flex gap-6 bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 animate-fade-up"
+                className="flex gap-6 bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 animate-fade-up w-full max-w-md lg:max-w-none text-center lg:text-left items-center lg:items-start"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
