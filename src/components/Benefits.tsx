@@ -49,7 +49,7 @@ const Benefits = () => {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             {/* Left Content */}
             <div className="text-center lg:text-left flex flex-col">
