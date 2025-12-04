@@ -40,13 +40,13 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 items-stretch">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
               className={cn(
                 "bg-card rounded-2xl p-8 shadow-card hover:shadow-glow transition-all duration-300 animate-fade-up",
-                "relative overflow-hidden"
+                "relative overflow-hidden flex flex-col"
               )}
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -61,20 +61,21 @@ const Testimonials = () => {
               </div>
 
               {/* Content */}
-              <p className="text-foreground leading-relaxed mb-6 relative z-10">
+              <p className="text-foreground leading-relaxed mb-6 relative z-10 flex-grow">
                 "{testimonial.content}"
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center flex-shrink-0">
-                  <span className="text-primary-foreground font-bold">
+              <div className="flex items-center gap-4 mt-auto">
+                <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center">
+                  <span className="text-primary-foreground font-bold text-lg">
                     {testimonial.name.charAt(0)}
                   </span>
                 </div>
-                <h4 className="font-bold text-foreground text-sm">{testimonial.name}</h4>
-                <span className="text-muted-foreground">•</span>
-                <p className="text-sm text-muted-foreground truncate">{testimonial.role}</p>
+                <div>
+                  <h4 className="font-bold text-foreground">{testimonial.name}</h4>
+                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                </div>
               </div>
             </div>
           ))}
