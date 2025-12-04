@@ -6,7 +6,7 @@ const benefits = [
   {
     icon: TrendingUp,
     title: "Meetbare Resultaten",
-    description: "Concrete KPI's en voortgangsrapportages voor grip op uw projecten.",
+    description: "Concrete KPI's en voortgangsrapportages.",
   },
   {
     icon: Shield,
