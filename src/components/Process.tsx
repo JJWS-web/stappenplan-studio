@@ -4,22 +4,22 @@ const steps = [
   {
     number: "01",
     title: "Analyse",
-    description: "We beginnen met een grondige analyse van uw huidige situatie, doelen en uitdagingen.",
+    description: "Grondige analyse van uw situatie en doelen.",
   },
   {
     number: "02",
     title: "Strategie",
-    description: "Op basis van de analyse ontwikkelen we een gepersonaliseerde strategie en roadmap.",
+    description: "Gepersonaliseerde strategie en roadmap.",
   },
   {
     number: "03",
     title: "Implementatie",
-    description: "We begeleiden u bij de implementatie van het stappenplan met concrete acties.",
+    description: "Begeleiding bij de uitvoering van het plan.",
   },
   {
     number: "04",
     title: "Evaluatie",
-    description: "Continue monitoring en bijsturing zorgen voor optimale resultaten en groei.",
+    description: "Monitoring en bijsturing voor optimale resultaten.",
   },
 ];
 
@@ -33,10 +33,10 @@ const Process = () => {
             Onze Werkwijze
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-            Van plan naar resultaat in 4 stappen
+            Van plan naar resultaat
           </h2>
           <p className="text-muted-foreground text-lg">
-            Onze bewezen methodologie garandeert een gestructureerde aanpak voor elk project.
+            Onze bewezen methodologie voor elk project.
           </p>
         </div>
 

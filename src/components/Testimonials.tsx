@@ -5,19 +5,19 @@ const testimonials = [
   {
     name: "Marieke van den Berg",
     role: "Directeur, Van den Berg Consultancy",
-    content: "Dankzij UW Stappenplan hebben we onze bedrijfsprocessen volledig geoptimaliseerd. De resultaten overtroffen onze verwachtingen.",
+    content: "Bedrijfsprocessen volledig geoptimaliseerd. Resultaten overtroffen onze verwachtingen.",
     rating: 5,
   },
   {
     name: "Peter de Vries",
     role: "Manager Operations, TechFlow BV",
-    content: "Een zeer professionele aanpak. Het stappenplan was helder en de begeleiding uitstekend. Absolute aanrader!",
+    content: "Professionele aanpak met helder stappenplan en uitstekende begeleiding.",
     rating: 5,
   },
   {
     name: "Lisa Jansen",
     role: "Ondernemer",
-    content: "Als startende ondernemer had ik geen idee waar te beginnen. UW Stappenplan gaf me de structuur die ik nodig had.",
+    content: "De structuur die ik als startende ondernemer nodig had.",
     rating: 5,
   },
 ];
@@ -35,7 +35,7 @@ const Testimonials = () => {
             Wat onze klanten zeggen
           </h2>
           <p className="text-muted-foreground text-lg">
-            Ontdek hoe wij anderen hebben geholpen hun doelen te bereiken.
+            Ontdek hoe wij anderen hebben geholpen.
           </p>
         </div>
 

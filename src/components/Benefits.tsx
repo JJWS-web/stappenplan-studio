@@ -4,17 +4,17 @@ const benefits = [
   {
     icon: TrendingUp,
     title: "Meetbare Resultaten",
-    description: "Concrete KPI's en duidelijke voortgangsrapportages geven u inzicht in de behaalde resultaten.",
+    description: "Concrete KPI's en duidelijke voortgangsrapportages.",
   },
   {
     icon: Shield,
     title: "Bewezen Methodiek",
-    description: "Onze aanpak is gebaseerd op jarenlange ervaring en wetenschappelijk onderbouwde methoden.",
+    description: "Jarenlange ervaring en onderbouwde methoden.",
   },
   {
     icon: Zap,
     title: "Snelle Implementatie",
-    description: "Geen eindeloze voorbereidingstijd. We gaan direct aan de slag met praktische oplossingen.",
+    description: "Direct aan de slag met praktische oplossingen.",
   },
 ];
 
@@ -38,10 +38,10 @@ const Benefits = () => {
               Waarom Wij
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-              De voordelen van een gestructureerde aanpak
+              De voordelen van onze aanpak
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Met UW Stappenplan krijgt u niet alleen een plan, maar ook de begeleiding en tools om uw doelen daadwerkelijk te bereiken.
+              Niet alleen een plan, maar ook begeleiding en tools.
             </p>
 
             {/* Check Items Grid */}

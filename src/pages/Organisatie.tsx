@@ -1,7 +1,7 @@
 import { CheckCircle2, User, Briefcase, Calendar, Award, Play } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import video from "../assets/Pitch-Time_IT (1).mp4";
+import video from "../assets/TimeIT (1).mp4";
 const timeline = [
   {
     year: "Start",
