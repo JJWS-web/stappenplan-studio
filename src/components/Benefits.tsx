@@ -38,10 +38,10 @@ const Benefits = () => {
               Waarom Wij
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-              De voordelen van onze aanpak
+              Onze Voordelen
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Niet alleen een plan, maar ook begeleiding en tools.
+              Plan, begeleiding én tools inbegrepen.
             </p>
 
             {/* Check Items Grid */}

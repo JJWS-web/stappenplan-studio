@@ -33,7 +33,7 @@ const Process = () => {
             Onze Werkwijze
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-            Van plan naar resultaat
+            Onze Werkwijze
           </h2>
           <p className="text-muted-foreground text-lg">
             Onze bewezen methodologie voor elk project.
