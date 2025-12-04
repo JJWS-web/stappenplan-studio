@@ -32,7 +32,7 @@ const Testimonials = () => {
             Ervaringen
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-            Wat onze klanten zeggen
+            Klantervaringen
           </h2>
           <p className="text-muted-foreground text-lg">
             Ontdek hoe wij anderen hebben geholpen.
