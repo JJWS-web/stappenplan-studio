@@ -1,9 +1,10 @@
-import { ArrowRight, CheckCircle2, Clock, Zap, AlertTriangle, RefreshCw, Eye, MessageSquare, BarChart3, ExternalLink, Briefcase } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Zap, AlertTriangle, RefreshCw, Eye, MessageSquare, BarChart3, ExternalLink, Briefcase, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
 import { useNavigate } from "react-router-dom";
+import pitchVideo from "@/assets/Pitch-Time_IT.mp4";
 
 const timeline = [
   {
@@ -343,6 +344,42 @@ const Organisatie = () => {
                 Ontdek Time IT
                 <ExternalLink className="ml-2 h-5 w-5" />
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-6">
+                <Play className="h-4 w-4 text-primary" />
+                <span className="text-sm font-medium text-primary-foreground/90">
+                  Video Presentatie
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
+                Ontdek <span className="text-gradient">Time IT</span> in Actie
+              </h2>
+              <p className="text-muted-foreground text-lg mb-8 max-w-3xl mx-auto">
+                Bekijk onze pitch video en ontdek hoe Time IT uw organisatie kan helpen bij het beheren en aansturen van uw processen.
+              </p>
+            </div>
+
+            <div className="bg-card rounded-2xl p-6 shadow-card overflow-hidden animate-fade-up">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-muted">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src={pitchVideo} type="video/mp4" />
+                  Uw browser ondersteunt de video tag niet.
+                </video>
+              </div>
             </div>
           </div>
         </div>

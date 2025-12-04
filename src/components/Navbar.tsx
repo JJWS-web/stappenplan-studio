@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Over Ons", href: "/organisatie", isPage: true },
+  { label: "Over Ons", href: "/over-ons", isPage: true },
   { label: "Contact", href: "/contact", isPage: true },
 ];
 
