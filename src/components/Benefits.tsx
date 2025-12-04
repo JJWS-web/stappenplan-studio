@@ -52,13 +52,13 @@ const Benefits = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-stretch">
             {/* Left Content */}
-            <div className="text-center md:text-left flex flex-col">
+            <div className="text-center lg:text-left flex flex-col">
               <p className="text-muted-foreground text-base md:text-lg mb-8">
                 Bespaar tijd en kosten met onze as-a-Service oplossingen. Professionele ondersteuning zonder overhead.
               </p>
 
               {/* Check Items Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 w-fit mx-auto md:mx-0">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 w-fit mx-auto lg:mx-0">
                 {checkItems.map((item, index) => (
                   <div
                     key={item}
