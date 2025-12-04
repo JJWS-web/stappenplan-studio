@@ -67,14 +67,14 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center gap-4 mt-auto">
-                <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center">
+                <div className="w-12 h-12 min-w-[48px] min-h-[48px] rounded-full gradient-primary flex items-center justify-center flex-shrink-0">
                   <span className="text-primary-foreground font-bold text-lg">
                     {testimonial.name.charAt(0)}
                   </span>
                 </div>
-                <div>
-                  <h4 className="font-bold text-foreground">{testimonial.name}</h4>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                <div className="min-w-0">
+                  <h4 className="font-bold text-foreground truncate">{testimonial.name}</h4>
+                  <p className="text-sm text-muted-foreground truncate">{testimonial.role}</p>
                 </div>
               </div>
             </div>
