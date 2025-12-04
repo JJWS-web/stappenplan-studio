@@ -35,7 +35,7 @@ const Hero = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
+          <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
             Bereik uw doel met een<br />
             <span className="text-gradient">helder stappenplan</span>
           </h1>
