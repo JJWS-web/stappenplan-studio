@@ -1,4 +1,6 @@
-import { Check, TrendingUp, Shield, Zap, Target } from "lucide-react";
+import { Check, TrendingUp, Shield, Zap, Target, ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 
 const benefits = [
   {
@@ -28,6 +30,8 @@ const checkItems = [
 ];
 
 const Benefits = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="organisatie" className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -68,6 +72,15 @@ const Benefits = () => {
                   </div>
                 ))}
               </div>
+
+              <Button 
+                variant="hero" 
+                className="mt-8"
+                onClick={() => navigate("/organisatie")}
+              >
+                Over Ons
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
             </div>
 
             {/* Right Content - Benefit Cards */}
