@@ -30,7 +30,7 @@ const Hero = () => {
           <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-8 animate-fade-up">
             <CheckCircle2 className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-primary-foreground/90">
-              Gestructureerd naar succes
+              Tandem - Persoonlijke Aanpak
             </span>
           </div>
 
@@ -41,7 +41,7 @@ const Hero = () => {
 
           {/* Subtext */}
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
-            Complexe processen omgezet in concrete, uitvoerbare stappen.
+            Minder frustratie, geen tijdverlies. Samen pakken we management- en procesuitdagingen aan.
           </p>
 
           {/* CTAs */}
