@@ -13,9 +13,9 @@ const services = [
     description: "Volledig contractbeheer.",
     color: "primary",
     details: [
-      "Overzicht van alle contracten en verplichtingen",
-      "Automatische herinneringen bij verloopdatums",
-      "Compliance en risicobeheer op één plek",
+      "Volledig overzicht van al uw contracten, verplichtingen en deadlines op één centrale plek",
+      "Automatische herinneringen bij verloopdatums zodat u nooit meer een belangrijk moment mist",
+      "Compliance en risicobeheer geïntegreerd voor optimale controle over uw contractportfolio",
     ],
   },
   {
@@ -26,9 +26,9 @@ const services = [
     description: "Uw assistent op afstand.",
     color: "accent",
     details: [
-      "Administratieve ondersteuning op afstand",
-      "Agenda- en mailbeheer door experts",
-      "Flexibele inzet naar uw behoefte",
+      "Professionele administratieve ondersteuning op afstand door ervaren assistenten",
+      "Complete agenda- en mailbeheer zodat u zich kunt focussen op uw core business",
+      "Flexibele inzet die meegroeit met uw behoeften zonder vaste personeelskosten",
     ],
   },
   {
@@ -39,9 +39,9 @@ const services = [
     description: "Marketing zonder afdeling.",
     color: "primary",
     details: [
-      "Volledige marketingstrategie en uitvoering",
-      "Social media en contentcreatie",
-      "Meetbare resultaten en rapportages",
+      "Volledige marketingstrategie en uitvoering zonder eigen marketingafdeling nodig",
+      "Social media beheer en professionele contentcreatie afgestemd op uw doelgroep",
+      "Meetbare resultaten met heldere rapportages voor inzicht in uw marketing ROI",
     ],
   },
   {
@@ -52,9 +52,9 @@ const services = [
     description: "Bedrijfscontinuïteit.",
     color: "accent",
     details: [
-      "Gegarandeerde uptime en beschikbaarheid",
-      "Automatische back-ups en herstelplannen",
-      "24/7 monitoring en ondersteuning",
+      "Gegarandeerde uptime en beschikbaarheid van uw kritieke bedrijfssystemen",
+      "Automatische back-ups en uitgewerkte herstelplannen voor elke situatie",
+      "24/7 monitoring en directe ondersteuning bij calamiteiten en verstoringen",
     ],
   },
   {
@@ -65,9 +65,9 @@ const services = [
     description: "Soepele migraties.",
     color: "primary",
     details: [
-      "Projectmanagement van A tot Z",
-      "Minimale verstoring van bedrijfsvoering",
-      "Training en nazorg inbegrepen",
+      "Professioneel projectmanagement van analyse tot oplevering en nazorg",
+      "Minimale verstoring van uw dagelijkse bedrijfsvoering tijdens het traject",
+      "Uitgebreide training en ondersteuning zodat uw team direct aan de slag kan",
     ],
   },
   {
@@ -78,9 +78,9 @@ const services = [
     description: "Controle over audits.",
     color: "accent",
     details: [
-      "Volledige audit voorbereiding en begeleiding",
-      "Documentatie en compliance check",
-      "Actieplan voor verbeterpunten",
+      "Volledige voorbereiding en begeleiding tijdens het gehele auditproces",
+      "Grondige documentatie en compliance check voor optimale voorbereiding",
+      "Concreet actieplan voor verbeterpunten met heldere prioriteiten en deadlines",
     ],
   },
 ];
