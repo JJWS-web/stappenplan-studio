@@ -89,9 +89,9 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-background relative z-10">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto -mt-24">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <a 
               href="mailto:p.v.deutekom@mirada.nl" 
               className="bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 hover:-translate-y-1 group"
