@@ -41,7 +41,7 @@ const Benefits = () => {
               Onze Voordelen
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Plan, begeleiding én tools inbegrepen.
+              Persoonlijke aanpak bij elke klant. Plan, begeleiding én tools.
             </p>
 
             {/* Check Items Grid */}
