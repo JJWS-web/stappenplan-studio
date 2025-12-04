@@ -50,7 +50,7 @@ const Benefits = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             {/* Left Content */}
             <div className="text-center lg:text-left flex flex-col">
               <p className="text-muted-foreground text-base md:text-lg mb-8">
