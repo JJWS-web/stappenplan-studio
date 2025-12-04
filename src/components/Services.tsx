@@ -148,7 +148,10 @@ const Services = () => {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-3 md:mt-4 mb-3 md:mb-4">
             Onze Diensten
           </h2>
-          <p className="text-muted-foreground text-sm md:text-base">
+          <p className="text-muted-foreground text-sm md:text-base mb-2">
+            Professionele as-a-Service oplossingen voor uw bedrijf.
+          </p>
+          <p className="text-muted-foreground text-xs md:text-sm">
             Klik op een service voor meer informatie.
           </p>
         </div>
