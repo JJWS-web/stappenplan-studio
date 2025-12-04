@@ -1,8 +1,7 @@
-import { ArrowRight, CheckCircle2, Clock, Zap, MessageSquare, Eye, BarChart3, Link2, Shield, Play, ExternalLink } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Zap, MessageSquare, Eye, BarChart3, Link2, Shield, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import videos from "../assets/TimeIT (1).mp4";
 
 const benefits = [
   { icon: Clock, text: "Tijdsbesparing bij de voorbereiding, maar ook bij de uitvoering (implementatie)" },
@@ -63,37 +62,6 @@ const TimeIt = () => {
         </div>
       </section>
 
-      {/* Video Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-                Bekijk de Demo
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4">
-                Time IT in actie
-              </h2>
-            </div>
-
-            {/* Video Container */}
-            <div className="relative aspect-video bg-card rounded-2xl shadow-card overflow-hidden border border-border">
-            <div className="relative aspect-video bg-card rounded-2xl shadow-card overflow-hidden border border-border">
-  <video
-    src={videos}
-    controls
-    className="absolute inset-0 w-full h-full object-cover"
-  >
-    Uw browser ondersteunt deze video niet.
-  </video>
-</div>
-
-              
-            
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Benefits Section */}
       <section className="py-24 bg-muted/50">
