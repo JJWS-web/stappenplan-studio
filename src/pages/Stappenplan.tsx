@@ -1,9 +1,8 @@
-import { ArrowRight, CheckCircle2, Clock, Shield, Users, Zap, AlertTriangle, RefreshCw, Eye, MessageSquare, Play } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Shield, Users, Zap, AlertTriangle, RefreshCw, Eye, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
-import video from "../assets/TimeIT (1).mp4"
 
 const painPoints = [
   {
@@ -95,36 +94,6 @@ const Stappenplan = () => {
         </div>
       </section>
 
-      {/* Video Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-                Bekijk de Demo
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4">
-                Time IT in actie
-              </h2>
-            </div>
-
-            {/* Video Container */}
-            <div className="relative aspect-video bg-card rounded-2xl shadow-card overflow-hidden border border-border">
-              {/* Replace the src with your actual video URL */}
-              <video
-    src={video}
-    controls
-    className="absolute inset-0 w-full h-full object-cover"
-  >
-    Uw browser ondersteunt deze video niet.
-  </video>
-              
-              {/* Placeholder overlay - remove when video is added */}
-             
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Pain Points Section */}
       <section className="py-24 bg-muted/50">

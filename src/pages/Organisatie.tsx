@@ -1,7 +1,7 @@
-import { CheckCircle2, User, Briefcase, Calendar, Award, Play } from "lucide-react";
+import { CheckCircle2, User, Briefcase, Calendar, Award } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import video from "../assets/TimeIT (1).mp4";
+
 const timeline = [
   {
     year: "Start",
@@ -75,35 +75,6 @@ const Organisatie = () => {
         </div>
       </section>
 
-      {/* Video Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-                Bekijk de Video
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4">
-                Ontdek Mirada BV
-              </h2>
-            </div>
-
-            {/* Video Container */}
-            <div className="relative aspect-video bg-card rounded-2xl shadow-card overflow-hidden border border-border">
-            <video
-    src={video}
-    controls
-    className="absolute inset-0 w-full h-full object-cover"
-  >
-    Uw browser ondersteunt deze video niet.
-  </video>
-              
-              {/* Placeholder overlay - remove when video is added */}
-              
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Founder Section */}
       <section className="py-24 bg-muted/50">
