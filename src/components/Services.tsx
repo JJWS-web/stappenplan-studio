@@ -135,7 +135,7 @@ const Services = () => {
         {/* Two Column Layout - stacks on mobile/tablet */}
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-start max-w-6xl mx-auto">
           {/* Services Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 order-2 lg:order-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
             {services.map((service, index) => (
               <div
                 key={service.id}
@@ -176,7 +176,7 @@ const Services = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card rounded-2xl p-5 md:p-6 lg:p-8 shadow-card order-1 lg:order-2">
+          <div className="bg-card rounded-2xl p-5 md:p-6 lg:p-8 shadow-card">
             <h3 className="text-lg md:text-xl font-bold text-foreground mb-2">
               Vraag informatie aan
             </h3>

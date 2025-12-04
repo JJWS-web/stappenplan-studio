@@ -19,9 +19,9 @@ const benefits = [
 ];
 
 const checkItems = [
-  "Persoonlijke aanpak",
-  "Flexibel op maat",
-  "Continue support",
+  "Persoonlijk",
+  "Flexibel",
+  "Support",
   "Transparant",
   "Resultaatgericht",
   "Maatwerk",
