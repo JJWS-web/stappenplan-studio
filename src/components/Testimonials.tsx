@@ -66,16 +66,15 @@ const Testimonials = () => {
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-lg">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center flex-shrink-0">
+                  <span className="text-primary-foreground font-bold">
                     {testimonial.name.charAt(0)}
                   </span>
                 </div>
-                <div>
-                  <h4 className="font-bold text-foreground">{testimonial.name}</h4>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
+                <h4 className="font-bold text-foreground text-sm">{testimonial.name}</h4>
+                <span className="text-muted-foreground">•</span>
+                <p className="text-sm text-muted-foreground truncate">{testimonial.role}</p>
               </div>
             </div>
           ))}
