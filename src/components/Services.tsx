@@ -284,7 +284,7 @@ const Services = () => {
 
       {/* Service Detail Modal */}
       <Dialog open={!!selectedService} onOpenChange={() => setSelectedService(null)}>
-        <DialogContent className="sm:max-w-md mx-4 p-6 rounded-2xl">
+        <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-md p-5 sm:p-6 rounded-xl">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-3">
               {selectedService && (
