@@ -83,7 +83,7 @@ const ContactPage = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
-              Heeft u vragen over Time IT of onze diensten? Wij helpen u graag verder.
+              Op basis van veel ervaring in het vakgebied hebben wij het product Time IT laten ontwikkelen.
             </p>
           </div>
         </div>
