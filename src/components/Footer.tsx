@@ -1,71 +1,69 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, Linkedin, Twitter } from "lucide-react";
-import Logo from "./Logo";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-primary-foreground py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="relative flex items-end gap-0.5">
-                <div className="w-2 h-3 rounded-sm bg-primary" />
-                <div className="w-2 h-5 rounded-sm bg-primary" />
-                <div className="w-2 h-7 rounded-sm bg-primary" />
-                <div className="w-2 h-9 rounded-sm bg-accent" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-primary-foreground">
-                Uw<span className="text-primary">stappenplan</span>
-              </span>
-            </div>
-            <p className="text-primary-foreground/70 max-w-md mb-6">
-              Wij helpen organisaties en individuen hun ambities te realiseren door complexe processen om te zetten in concrete, uitvoerbare stappen.
-            </p>
-
-            {/* Social Links */}
-            <div className="flex gap-4">
-              <a
-                href="https://wa.me/31629531820"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
-                aria-label="WhatsApp"
-              >
-                <Phone className="h-5 w-5" />
-              </a>
-                  <a 
-                    href="mailto:service@uwstappenplan.nl" 
-                    className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
-                    aria-label="Email"
-                  >
-                    <Mail className="h-5 w-5" />
-                  </a>
-              <a
-                href="https://twitter.com/uwstappenplan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
-                aria-label="X (Twitter)"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="https://linkedin.com/company/uwstappenplan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
+    <footer className="bg-foreground text-primary-foreground">
+      {/* Link Columns Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+          {/* Diensten */}
+          <div>
+            <h3 className="font-bold text-lg mb-6">Diensten</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  Contractmanagement
+                </Link>
+              </li>
+              <li>
+                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  Personal Assistant
+                </Link>
+              </li>
+              <li>
+                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  Marketing
+                </Link>
+              </li>
+              <li>
+                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  Disaster Recovery
+                </Link>
+              </li>
+            </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Oplossingen */}
           <div>
-            <h3 className="font-bold text-lg mb-6">Navigatie</h3>
+            <h3 className="font-bold text-lg mb-6">Oplossingen</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  Implementatie
+                </Link>
+              </li>
+              <li>
+                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  Migratie
+                </Link>
+              </li>
+              <li>
+                <Link to="/#services" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  Audit Processen
+                </Link>
+              </li>
+              <li>
+                <Link to="/time-it" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  Time IT
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Informatie */}
+          <div>
+            <h3 className="font-bold text-lg mb-6">Informatie</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/organisatie" className="text-primary-foreground/70 hover:text-primary transition-colors">
@@ -73,34 +71,31 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/#contact" className="text-primary-foreground/70 hover:text-primary transition-colors">
-                  Contact
+                <Link to="/stappenplan" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  Stappenplan
+                </Link>
+              </li>
+              <li>
+                <Link to="/#process" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  Werkwijze
+                </Link>
+              </li>
+              <li>
+                <Link to="/#testimonials" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  Testimonials
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Support */}
           <div>
-            <h3 className="font-bold text-lg mb-6">Contact</h3>
+            <h3 className="font-bold text-lg mb-6">Support</h3>
             <ul className="space-y-3">
               <li>
-                <a 
-                  href="mailto:service@uwstappenplan.nl" 
-                  className="text-primary-foreground/70 hover:text-primary transition-colors flex items-center gap-2"
-                >
-                  <Mail className="h-4 w-4" />
-                  service@uwstappenplan.nl
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="tel:0850046524" 
-                  className="text-primary-foreground/70 hover:text-primary transition-colors flex items-center gap-2"
-                >
-                  <Phone className="h-4 w-4" />
-                  085 004 6524
-                </a>
+                <Link to="/#contact" className="text-primary-foreground/70 hover:text-primary transition-colors">
+                  Contact
+                </Link>
               </li>
               <li>
                 <Link to="/privacy" className="text-primary-foreground/70 hover:text-primary transition-colors">
@@ -115,15 +110,85 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-primary-foreground/50 text-sm">
-            © {new Date().getFullYear()} UW Stappenplan. Alle rechten voorbehouden.
-          </p>
-          <p className="text-primary-foreground/50 text-sm">
-            Gemaakt met ❤️ in Nederland
-          </p>
+      {/* Brand & Contact Section */}
+      <div className="border-t border-primary-foreground/10">
+        <div className="container mx-auto px-4 py-12">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="relative flex items-end gap-0.5">
+                <div className="w-2 h-3 rounded-sm bg-primary" />
+                <div className="w-2 h-5 rounded-sm bg-primary" />
+                <div className="w-2 h-7 rounded-sm bg-primary" />
+                <div className="w-2 h-9 rounded-sm bg-accent" />
+              </div>
+              <span className="text-xl font-bold tracking-tight text-primary-foreground">
+                Uw<span className="text-primary">stappenplan</span>
+              </span>
+            </div>
+            <p className="text-primary-foreground/70 max-w-md mx-auto">
+              Uw betrouwbare partner voor projectmanagement en implementatie oplossingen.
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-16">
+            {/* Contact */}
+            <div>
+              <h4 className="font-semibold mb-4 text-center md:text-left">Neem contact op:</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a 
+                    href="mailto:service@uwstappenplan.nl" 
+                    className="text-primary-foreground/70 hover:text-primary transition-colors flex items-center gap-2"
+                  >
+                    <Mail className="h-4 w-4" />
+                    service@uwstappenplan.nl
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="tel:0850046524" 
+                    className="text-primary-foreground/70 hover:text-primary transition-colors flex items-center gap-2"
+                  >
+                    <Phone className="h-4 w-4" />
+                    085 004 6524
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Location */}
+            <div>
+              <h4 className="font-semibold mb-4 text-center md:text-left">Locatie:</h4>
+              <ul className="space-y-3">
+                <li className="text-primary-foreground/70 flex items-center gap-2">
+                  <MapPin className="h-4 w-4" />
+                  Nederland
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-primary-foreground/10">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-primary-foreground/50 text-sm">
+              © {new Date().getFullYear()} UW Stappenplan. Alle rechten voorbehouden.
+            </p>
+            <div className="flex items-center gap-4 text-sm">
+              <Link to="/privacy" className="text-primary-foreground/50 hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
+              <span className="text-primary-foreground/30">|</span>
+              <Link to="/voorwaarden" className="text-primary-foreground/50 hover:text-primary transition-colors">
+                Algemene Voorwaarden
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
