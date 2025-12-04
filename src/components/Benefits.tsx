@@ -50,9 +50,9 @@ const Benefits = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="grid md:grid-cols-2 gap-12 items-stretch">
             {/* Left Content */}
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-left flex flex-col">
               <p className="text-muted-foreground text-base md:text-lg mb-8">
                 Bespaar tijd en kosten met onze as-a-Service oplossingen. Professionele ondersteuning zonder overhead.
               </p>
@@ -73,7 +73,7 @@ const Benefits = () => {
                 ))}
               </div>
 
-              <div className="mt-8">
+              <div className="mt-auto pt-8">
                 <p className="text-sm text-muted-foreground mb-3">Meer weten over wie wij zijn?</p>
                 <Button 
                   variant="hero" 
