@@ -3,25 +3,25 @@ import { Check, TrendingUp, Shield, Zap } from "lucide-react";
 const benefits = [
   {
     icon: TrendingUp,
-    title: "Meetbare Resultaten",
-    description: "Concrete KPI's en duidelijke voortgangsrapportages.",
+    title: "Resultaten",
+    description: "Concrete KPI's en voortgangsrapportages.",
   },
   {
     icon: Shield,
-    title: "Bewezen Methodiek",
-    description: "Jarenlange ervaring en onderbouwde methoden.",
+    title: "Methodiek",
+    description: "Jarenlange ervaring en methoden.",
   },
   {
     icon: Zap,
-    title: "Snelle Implementatie",
-    description: "Direct aan de slag met praktische oplossingen.",
+    title: "Implementatie",
+    description: "Direct aan de slag met oplossingen.",
   },
 ];
 
 const checkItems = [
-  "Persoonlijke aanpak",
-  "Flexibel op maat",
-  "Continue support",
+  "Persoonlijk",
+  "Flexibel",
+  "Support",
   "Transparant",
   "Resultaatgericht",
   "Maatwerk",
@@ -33,19 +33,19 @@ const Benefits = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div>
+          <div className="text-center lg:text-left">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Waarom Wij
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-              De voordelen van onze aanpak
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-4 mb-6">
+              Onze Voordelen
             </h2>
-            <p className="text-muted-foreground text-lg mb-8">
-              Niet alleen een plan, maar ook begeleiding en tools.
+            <p className="text-muted-foreground text-base md:text-lg mb-8">
+              Persoonlijke aanpak met plan en begeleiding.
             </p>
 
             {/* Check Items Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-x-8 md:gap-x-32 lg:gap-x-12 gap-y-4 w-fit mx-auto lg:mx-0">
               {checkItems.map((item, index) => (
                 <div
                   key={item}
@@ -62,21 +62,21 @@ const Benefits = () => {
           </div>
 
           {/* Right Content - Benefit Cards */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {benefits.map((benefit, index) => (
               <div
                 key={benefit.title}
-                className="flex gap-6 bg-card rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 animate-fade-up"
+                className="flex gap-4 md:gap-6 bg-card rounded-2xl p-4 md:p-6 shadow-card hover:shadow-glow transition-all duration-300 animate-fade-up items-center"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
-                  <benefit.icon className="h-7 w-7 text-primary-foreground" />
+                <div className="w-12 h-12 md:w-14 md:h-14 min-w-[48px] md:min-w-[56px] rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
+                  <benefit.icon className="h-6 w-6 md:h-7 md:w-7 text-primary-foreground" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
+                  <h3 className="text-base md:text-lg lg:text-xl font-bold text-foreground mb-1">
                     {benefit.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-xs md:text-sm lg:text-base text-muted-foreground leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>

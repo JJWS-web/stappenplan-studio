@@ -1,17 +1,13 @@
 import { ArrowDown, CheckCircle2 } from "lucide-react";
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   const scrollToServices = () => {
     const element = document.querySelector("#services");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -39,23 +35,23 @@ const Hero = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
             Bereik uw doelen met een{" "}
             <span className="text-gradient">helder stappenplan</span>
           </h1>
 
           {/* Subtext */}
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
-            Complexe processen omgezet in concrete, uitvoerbare stappen.
+          <p className="text-base md:text-lg lg:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
+            Van complex naar concreet en uitvoerbaar.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: "300ms" }}>
             <Button variant="hero" size="lg" onClick={scrollToServices}>
-              Ontdek Onze Aanpak
+              Ontdek Onze Diensten
               <ArrowDown className="ml-2 h-5 w-5 animate-bounce" />
             </Button>
-            <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" onClick={scrollToContact}>
+            <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" onClick={() => navigate("/contact")}>
               Neem Contact Op
             </Button>
           </div>

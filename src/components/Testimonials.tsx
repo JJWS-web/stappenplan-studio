@@ -5,19 +5,19 @@ const testimonials = [
   {
     name: "Marieke van den Berg",
     role: "Directeur, Van den Berg Consultancy",
-    content: "Bedrijfsprocessen volledig geoptimaliseerd. Resultaten overtroffen onze verwachtingen.",
+    content: "Resultaten overtroffen onze verwachtingen.",
     rating: 5,
   },
   {
     name: "Peter de Vries",
     role: "Manager Operations, TechFlow BV",
-    content: "Professionele aanpak met helder stappenplan en uitstekende begeleiding.",
+    content: "Professionele aanpak met helder stappenplan.",
     rating: 5,
   },
   {
     name: "Lisa Jansen",
     role: "Ondernemer",
-    content: "De structuur die ik als startende ondernemer nodig had.",
+    content: "De structuur die ik nodig had.",
     rating: 5,
   },
 ];
@@ -31,22 +31,22 @@ const Testimonials = () => {
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Ervaringen
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-            Wat onze klanten zeggen
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-4 mb-6">
+            Klantervaringen
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base md:text-lg">
             Ontdek hoe wij anderen hebben geholpen.
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 items-stretch">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
               className={cn(
                 "bg-card rounded-2xl p-8 shadow-card hover:shadow-glow transition-all duration-300 animate-fade-up",
-                "relative overflow-hidden"
+                "relative overflow-hidden flex flex-col"
               )}
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -61,20 +61,20 @@ const Testimonials = () => {
               </div>
 
               {/* Content */}
-              <p className="text-foreground leading-relaxed mb-6 relative z-10">
+              <p className="text-sm md:text-base text-foreground leading-relaxed mb-6 relative z-10 flex-grow">
                 "{testimonial.content}"
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center">
+              <div className="flex items-center gap-4 mt-auto">
+                <div className="w-12 h-12 min-w-[48px] min-h-[48px] rounded-full gradient-primary flex items-center justify-center flex-shrink-0">
                   <span className="text-primary-foreground font-bold text-lg">
                     {testimonial.name.charAt(0)}
                   </span>
                 </div>
-                <div>
-                  <h4 className="font-bold text-foreground">{testimonial.name}</h4>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                <div className="min-w-0">
+                  <h4 className="font-bold text-foreground truncate">{testimonial.name}</h4>
+                  <p className="text-sm text-muted-foreground truncate">{testimonial.role}</p>
                 </div>
               </div>
             </div>

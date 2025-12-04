@@ -4,22 +4,22 @@ const steps = [
   {
     number: "01",
     title: "Analyse",
-    description: "Grondige analyse van uw situatie en doelen.",
+    description: "Grondige analyse van uw situatie, doelen en uitdagingen.",
   },
   {
     number: "02",
     title: "Strategie",
-    description: "Gepersonaliseerde strategie en roadmap.",
+    description: "Gepersonaliseerde strategie en concrete roadmap.",
   },
   {
     number: "03",
     title: "Implementatie",
-    description: "Begeleiding bij de uitvoering van het plan.",
+    description: "Begeleiding bij de uitvoering van het volledige plan.",
   },
   {
     number: "04",
     title: "Evaluatie",
-    description: "Monitoring en bijsturing voor optimale resultaten.",
+    description: "Continue monitoring en bijsturing voor resultaten.",
   },
 ];
 
@@ -32,10 +32,10 @@ const Process = () => {
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Onze Werkwijze
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6">
-            Van plan naar resultaat
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-4 mb-6">
+            Onze Werkwijze
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base md:text-lg">
             Onze bewezen methodologie voor elk project.
           </p>
         </div>
@@ -69,10 +69,10 @@ const Process = () => {
 
                 {/* Content */}
                 <div className="pt-8">
-                  <h3 className="text-xl font-bold text-foreground mb-3">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </div>
