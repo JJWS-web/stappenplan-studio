@@ -4,17 +4,17 @@ const benefits = [
   {
     icon: TrendingUp,
     title: "Resultaten",
-    description: "Concrete KPI's en duidelijke voortgangsrapportages.",
+    description: "Concrete KPI's en voortgangsrapportages.",
   },
   {
     icon: Shield,
     title: "Methodiek",
-    description: "Jarenlange ervaring en onderbouwde methoden.",
+    description: "Jarenlange ervaring en methoden.",
   },
   {
     icon: Zap,
     title: "Implementatie",
-    description: "Direct aan de slag met praktische oplossingen.",
+    description: "Direct aan de slag met oplossingen.",
   },
 ];
 
@@ -41,7 +41,7 @@ const Benefits = () => {
               Onze Voordelen
             </h2>
             <p className="text-muted-foreground text-base md:text-lg mb-8">
-              Persoonlijke aanpak bij elke klant. Plan, begeleiding én tools.
+              Persoonlijke aanpak met plan en begeleiding.
             </p>
 
             {/* Check Items Grid */}

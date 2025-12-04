@@ -5,19 +5,19 @@ const testimonials = [
   {
     name: "Marieke van den Berg",
     role: "Directeur, Van den Berg Consultancy",
-    content: "Bedrijfsprocessen volledig geoptimaliseerd. Resultaten overtroffen onze verwachtingen.",
+    content: "Resultaten overtroffen onze verwachtingen.",
     rating: 5,
   },
   {
     name: "Peter de Vries",
     role: "Manager Operations, TechFlow BV",
-    content: "Professionele aanpak met helder stappenplan en uitstekende begeleiding.",
+    content: "Professionele aanpak met helder stappenplan.",
     rating: 5,
   },
   {
     name: "Lisa Jansen",
     role: "Ondernemer",
-    content: "De structuur die ik als startende ondernemer nodig had.",
+    content: "De structuur die ik nodig had.",
     rating: 5,
   },
 ];

@@ -4,22 +4,22 @@ const steps = [
   {
     number: "01",
     title: "Analyse",
-    description: "Grondige analyse van uw situatie en doelen.",
+    description: "Grondige analyse van uw situatie.",
   },
   {
     number: "02",
     title: "Strategie",
-    description: "Gepersonaliseerde strategie en roadmap.",
+    description: "Gepersonaliseerde roadmap.",
   },
   {
     number: "03",
     title: "Implementatie",
-    description: "Begeleiding bij de uitvoering van het plan.",
+    description: "Begeleiding bij de uitvoering.",
   },
   {
     number: "04",
     title: "Evaluatie",
-    description: "Monitoring en bijsturing voor optimale resultaten.",
+    description: "Monitoring voor optimale resultaten.",
   },
 ];
 

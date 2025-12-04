@@ -42,7 +42,7 @@ const Hero = () => {
 
           {/* Subtext */}
           <p className="text-base md:text-lg lg:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "200ms" }}>
-            Complexe processen omgezet in concrete, uitvoerbare stappen.
+            Van complex naar concreet en uitvoerbaar.
           </p>
 
           {/* CTAs */}
