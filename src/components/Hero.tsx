@@ -36,7 +36,8 @@ const Hero = () => {
 
           {/* Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "100ms" }}>
-            <span className="text-gradient">Helder Stappenplan</span>
+            Bereik uw doelen met een{" "}
+            <span className="text-gradient">helder stappenplan</span>
           </h1>
 
           {/* Subtext */}
