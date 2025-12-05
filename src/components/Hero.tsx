@@ -57,20 +57,20 @@ const Hero = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-center gap-6 sm:gap-8 text-primary-foreground animate-fade-up mx-auto w-fit" style={{ animationDelay: "400ms" }}>
-            <div className="flex items-center gap-2 w-44 sm:w-auto">
-              <span className="text-3xl font-bold text-primary w-20">500+</span>
-              <span className="text-sm">Projecten</span>
+          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 text-primary-foreground animate-fade-up" style={{ animationDelay: "400ms" }}>
+            <div className="flex flex-col items-center text-center">
+              <span className="text-4xl md:text-5xl font-bold text-primary">500+</span>
+              <span className="text-sm md:text-base mt-1 text-primary-foreground/80">Projecten</span>
             </div>
-            <div className="hidden sm:block w-px h-8 bg-primary-foreground/20" />
-            <div className="flex items-center gap-2 w-44 sm:w-auto">
-              <span className="text-3xl font-bold text-primary w-20">98%</span>
-              <span className="text-sm">Tevredenheid</span>
+            <div className="hidden sm:block w-px h-12 bg-primary-foreground/20" />
+            <div className="flex flex-col items-center text-center">
+              <span className="text-4xl md:text-5xl font-bold text-primary">98%</span>
+              <span className="text-sm md:text-base mt-1 text-primary-foreground/80">Tevredenheid</span>
             </div>
-            <div className="hidden sm:block w-px h-8 bg-primary-foreground/20" />
-            <div className="flex items-center gap-2 w-44 sm:w-auto">
-              <span className="text-3xl font-bold text-primary w-20">20+</span>
-              <span className="text-sm">Jaar Ervaring</span>
+            <div className="hidden sm:block w-px h-12 bg-primary-foreground/20" />
+            <div className="flex flex-col items-center text-center">
+              <span className="text-4xl md:text-5xl font-bold text-primary">20+</span>
+              <span className="text-sm md:text-base mt-1 text-primary-foreground/80">Jaar Ervaring</span>
             </div>
           </div>
         </div>
