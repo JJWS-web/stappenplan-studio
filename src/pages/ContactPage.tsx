@@ -40,9 +40,9 @@ const ContactPage = () => {
           name,
           email,
           company: formData.company,
-          message,
+          message: `Onderwerp: ${subject}\n\n${message}`,
           selectedService: "contact",
-          selectedServiceLabel: subject,
+          selectedServiceLabel: "Contact",
         }),
       });
 
