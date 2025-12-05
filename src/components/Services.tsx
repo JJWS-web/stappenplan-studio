@@ -6,6 +6,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { services, Service } from "@/data/services";
 
 const Services = () => {
+  const [modalService, setModalService] = useState<Service | null>(null);
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -16,6 +17,11 @@ const Services = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverMessage, setServerMessage] = useState<string | null>(null);
   const [serverError, setServerError] = useState<string | null>(null);
+
+  const handleSelectService = (service: Service) => {
+    setSelectedService(service);
+    setModalService(null);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,6 +50,8 @@ const Services = () => {
           email: formData.email,
           company: formData.company,
           message: formData.message,
+          selectedService: selectedService.id,
+          selectedServiceLabel: selectedService.title,
         }),
       });
 
@@ -52,6 +60,7 @@ const Services = () => {
       if (data.status === "success") {
         setServerMessage("Uw aanvraag is verzonden!");
         setFormData({ name: "", email: "", company: "", message: "" });
+        setSelectedService(null);
       } else {
         setServerError(data.message || "Er ging iets mis.");
       }
@@ -88,7 +97,7 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={service.id}
-                onClick={() => setSelectedService(service)}
+                onClick={() => setModalService(service)}
                 className={cn(
                   "group relative bg-card rounded-xl p-4 md:p-5 shadow-card hover:shadow-glow transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-primary/30 flex items-center",
                   "animate-fade-up"
@@ -126,7 +135,9 @@ const Services = () => {
               Vraag informatie aan
             </h3>
             <p className="text-muted-foreground text-sm mb-4 md:mb-6">
-              Vul het formulier in en wij nemen contact op.
+              {selectedService 
+                ? <>Gekozen: <span className="text-primary font-medium">{selectedService.title}</span></>
+                : "Selecteer een service en vul het formulier in."}
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
@@ -212,33 +223,33 @@ const Services = () => {
       </div>
 
       {/* Service Detail Modal */}
-      <Dialog open={!!selectedService} onOpenChange={() => setSelectedService(null)}>
+      <Dialog open={!!modalService} onOpenChange={() => setModalService(null)}>
         <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-md p-5 sm:p-6 rounded-xl">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-3">
-              {selectedService && (
+              {modalService && (
                 <>
                   <div
                     className={cn(
                       "w-10 h-10 rounded-lg flex items-center justify-center",
-                      selectedService.color === "primary" ? "gradient-primary" : "gradient-accent"
+                      modalService.color === "primary" ? "gradient-primary" : "gradient-accent"
                     )}
                   >
-                    <selectedService.icon className="h-5 w-5 text-primary-foreground" />
+                    <modalService.icon className="h-5 w-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <span className="text-foreground">{selectedService.title}</span>
-                    <span className="text-primary text-sm font-medium ml-2">({selectedService.shortTitle})</span>
+                    <span className="text-foreground">{modalService.title}</span>
+                    <span className="text-primary text-sm font-medium ml-2">({modalService.shortTitle})</span>
                   </div>
                 </>
               )}
             </DialogTitle>
           </DialogHeader>
-          {selectedService && (
+          {modalService && (
             <div className="mt-4">
-              <p className="text-muted-foreground mb-4">{selectedService.description}</p>
+              <p className="text-muted-foreground mb-4">{modalService.description}</p>
               <ul className="space-y-3">
-                {selectedService.details.map((detail, index) => (
+                {modalService.details.map((detail, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                       <span className="text-primary-foreground text-xs font-bold">{index + 1}</span>
@@ -247,6 +258,14 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
+              <Button 
+                onClick={() => handleSelectService(modalService)} 
+                variant="hero" 
+                className="w-full mt-6"
+              >
+                Selecteer deze service
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
           )}
         </DialogContent>
