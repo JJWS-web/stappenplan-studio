@@ -99,8 +99,11 @@ const Services = () => {
                 key={service.id}
                 onClick={() => setModalService(service)}
                 className={cn(
-                  "group relative bg-card rounded-xl p-4 md:p-5 shadow-card hover:shadow-glow transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-primary/30 flex items-center",
-                  "animate-fade-up"
+                  "group relative bg-card rounded-xl p-4 md:p-5 shadow-card hover:shadow-glow transition-all duration-300 cursor-pointer border-2 flex items-center",
+                  "animate-fade-up",
+                  selectedService?.id === service.id 
+                    ? "border-primary bg-primary/5 ring-2 ring-primary/20" 
+                    : "border-transparent hover:border-primary/30"
                 )}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
