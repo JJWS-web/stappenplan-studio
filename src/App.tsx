@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import CookiesBanner from "./components/CookiesBanner";
 import Index from "./pages/Index";
 import Stappenplan from "./pages/Stappenplan";
 import TimeIt from "./pages/TimeIt";
@@ -29,6 +30,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookiesBanner />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
