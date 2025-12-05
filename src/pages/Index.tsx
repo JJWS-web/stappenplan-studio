@@ -5,6 +5,7 @@ import Benefits from "@/components/Benefits";
 import Testimonials from "@/components/Testimonials";
 import SectionDivider from "@/components/SectionDivider";
 import Services from "@/components/Services";
+import StatsBanner from "@/components/StatsBanner";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -12,6 +13,7 @@ const Index = () => {
     <main className="min-h-screen bg-background">
       <Navbar />
       <Hero />
+      <StatsBanner />
       <Process />
       <Benefits />
       <Testimonials />
