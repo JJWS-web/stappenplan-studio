@@ -77,7 +77,7 @@ const Benefits = () => {
                 <p className="text-sm text-muted-foreground mb-3">Meer weten over wie wij zijn?</p>
                 <Button 
                   variant="hero" 
-                  onClick={() => navigate("/organisatie")}
+                  onClick={() => navigate("/over-ons")}
                 >
                   Over Ons
                   <ArrowRight className="ml-2 h-5 w-5" />
