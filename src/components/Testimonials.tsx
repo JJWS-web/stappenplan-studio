@@ -5,19 +5,19 @@ const testimonials = [
   {
     name: "Marieke van den Berg",
     role: "Directeur, Van den Berg Consultancy",
-    content: "Resultaten overtroffen onze verwachtingen.",
+    content: "Time IT heeft onze projectplanning volledig getransformeerd. Waar we voorheen uren kwijt waren aan Excel-sheets, hebben we nu realtime inzicht in alle activiteiten. De resultaten overtroffen onze verwachtingen.",
     rating: 5,
   },
   {
     name: "Peter de Vries",
     role: "Manager Operations, TechFlow BV",
-    content: "Professionele aanpak met helder stappenplan.",
+    content: "De professionele aanpak en het heldere stappenplan maakten de implementatie soepel. Binnen twee weken hadden we volledige controle over onze migratie. Aanrader voor elke IT-manager.",
     rating: 5,
   },
   {
     name: "Lisa Jansen",
     role: "Ondernemer",
-    content: "De structuur die ik nodig had.",
+    content: "Als ondernemer miste ik structuur in mijn projecten. Time IT gaf me precies de overzichtelijkheid die ik nodig had. Nu weet ik altijd waar ik sta en kan ik beter plannen.",
     rating: 5,
   },
 ];
